@@ -1,29 +1,49 @@
-# README #
+# Project Name
+> Here goes your awesome project description!
 
-This README would normally document whatever steps are necessary to get your application up and running.
+## Table of contents
+* [General info](#general-info)
+* [Screenshots](#screenshots)
+* [Technologies](#technologies)
+* [Setup](#setup)
+* [Features](#features)
+* [Status](#status)
+* [Inspiration](#inspiration)
+* [Contact](#contact)
 
-### What is this repository for? ###
+## General info
+Add more general information about project. What the purpose of the project is? Motivation?
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+## Screenshots
+![Example screenshot](./img/screenshot.png)
 
-### How do I get set up? ###
+## Technologies
+* Tech 1 - version 1.0
+* Tech 2 - version 2.0
+* Tech 3 - version 3.0
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+## Setup
+Describe how to install / setup your local environement / add link to demo version.
 
-### Contribution guidelines ###
+## Code Examples
+Show examples of usage:
+`put-your-code-here`
 
-* Writing tests
-* Code review
-* Other guidelines
+## Features
+List of features ready and TODOs for future development
+* Awesome feature 1
+* Awesome feature 2
+* Awesome feature 3
 
-### Who do I talk to? ###
+To-do list:
+* Wow improvement to be done 1
+* Wow improvement to be done 2
 
-* Repo owner or admin
-* Other community or team contact
+## Status
+Project is: _in progress_, _finished_, _no longer continue_ and why?
+
+## Inspiration
+Add here credits. Project inspired by..., based on...
+
+## Contact
+Created by [@flynerdpl](https://www.flynerd.pl/) - feel free to contact me!
