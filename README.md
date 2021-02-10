@@ -1,8 +1,12 @@
 # Spotify Playlist WebApp
-Austin Maldonado, Max Murray, Israel Carcamo, Daniel McPherson<br />
-We are creating a Spotify webapp that will create playslists for listeners of songs they haven't heard before based on their listening history.<br />
-Audience is spotify users who aren't always happy with the spotify created playlists.<br />
-We are doing this becauuse the provided playlist creator on spotify has some flaws that could be improved upon.<br />
+Austin Maldonado, Max Murray, Israel Carcamo, Daniel McPherson
+
+We are creating a Spotify webapp that will create playslists for listeners of songs they haven't heard before based on their listening history.
+
+Audience is spotify users who aren't always happy with the spotify created playlists.
+
+We are doing this becauuse the provided playlist creator on spotify has some flaws that could be improved upon.
+
 
 
 ## Table of contents
