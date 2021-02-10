@@ -1,5 +1,9 @@
-# Project Name
-> Here goes your awesome project description!
+# Spotify Playlist WebApp
+> Austin Maldonado, Max Murray, Israel Carcamo, Daniel McPherson
+> We are creating a Spotify webapp that will create playslists for listeners of songs they haven't heard before based on their listening history.
+> Audience is spotify users who aren't always happy with the spotify created playlists.
+> We are doing this becauuse the provided playlist creator on spotify has some flaws that could be improved upon.
+
 
 ## Table of contents
 * [General info](#general-info)
@@ -18,8 +22,8 @@ Add more general information about project. What the purpose of the project is? 
 ![Example screenshot](./img/screenshot.png)
 
 ## Technologies
-* Tech 1 - version 1.0
-* Tech 2 - version 2.0
+* Spotify Api - https://developer.spotify.com/documentation/web-api/
+* Spotify Web Playback SDK
 * Tech 3 - version 3.0
 
 ## Setup
