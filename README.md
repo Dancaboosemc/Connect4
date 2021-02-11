@@ -38,9 +38,13 @@ Show examples of usage:
 `put-your-code-here`
 
 ## Features
-* Awesome feature 1
-* Awesome feature 2
-* Awesome feature 3
+* Do Not Play Button - Feature will allow users to select Do Not Play for song or artist that will stop that song/artist from being included in future playlists.(Austin, Dan user stories)
+
+
+* Explicit Filter - Feature will allow users to control whether or not explicit content will be included in their playlists. Maybe will add on to have it have the option to ONLY play explicit tracks.(Israel user story)
+
+
+* Favorites Info Playlist creator - Feature will allow users to have "New Music" playlists created based on their favorites playlist. (Dan user story)
 
 ## To-do list:
 * Wow improvement to be done 1
