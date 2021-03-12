@@ -53,7 +53,9 @@ Show examples of usage:
 * Wow improvement to be done 2
 
 ## Status
+Daniel-
 Backlogging GUI and button coding tasks, need further research into how to properply implement GUI for a web app.
+Completed 1st iteration of Design Document.
 
 ## Inspiration
 Add here credits. Project inspired by..., based on...
