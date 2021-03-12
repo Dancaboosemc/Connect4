@@ -51,7 +51,7 @@ Show examples of usage:
 * Wow improvement to be done 2
 
 ## Status
-Project is: _in progress_, _finished_, _no longer continue_ and why?
+Backlogging GUI and button coding tasks, need further research into how to properply implement GUI for a web app.
 
 ## Inspiration
 Add here credits. Project inspired by..., based on...
