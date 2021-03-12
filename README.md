@@ -27,6 +27,8 @@ Add more general information about project. What the purpose of the project is? 
 
 ## Technologies
 * Spotify Api - https://developer.spotify.com/documentation/web-api/
+* Spotify Api Endpoints - https://developer.spotify.com/documentation/web-api/reference/#category-playlists
+* Spotify Api (possible wrappers) - https://developer.spotify.com/documentation/web-api/libraries/
 * Spotify Web Playback SDK
 * Tech 3 - version 3.0
 
