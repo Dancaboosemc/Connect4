@@ -61,6 +61,9 @@ Completed 1st iteration of Design Document.
 Investigating on designing GUI using javascript/Electron
 Completed Mockup of GUI.
 
+Unclaimed-
+Moving List creation tasks to backlog. Not enough time left in sprint
+
 ## Inspiration
 Add here credits. Project inspired by..., based on...
 
