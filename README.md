@@ -58,6 +58,8 @@ Show examples of usage:
 Daniel-
 Backlogging GUI and button coding tasks, need further research into how to properply implement GUI for a web app.
 Completed 1st iteration of Design Document.
+Investigating on designing GUI using javascript/Electron
+Completed Mockup of GUI.
 
 ## Inspiration
 Add here credits. Project inspired by..., based on...
