@@ -29,7 +29,7 @@ Create a web app that has alternative music discovery features not offered withi
 * [Spotify Api](https://developer.spotify.com/documentation/web-api/)
 * [Spotify Api Endpoints](https://developer.spotify.com/documentation/web-api/reference/#category-playlists)
 * [Spotify Api (possible wrappers)](https://developer.spotify.com/documentation/web-api/libraries/)
-* [Spotify Web Playback SDK](https://developer.spotify.com/documentation/
+* [Spotify Web Playback SDK](https://developer.spotify.com/documentation/)
 * [Tech 3 - version 3.0]()
 * [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API)
 * [Dexie.js](https://dexie.org/)
