@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+ <head>
+  <script src="https://unpkg.com/dexie@latest/dist/dexie.js"></script>
+ </head>
+ <body>
+    Name:<input type="text" name="name" id="name"/><br/>
+    Artist:<input type="text" name="artist" id="artist"/></br>
+    <button>add new</button>
+    
+    <script>
+        
+        var db = new Dexie("spot-database");
+
+        // Define Database
+        db.version(1).stores({
+            songs: "++id, name, artist"
+        });
+
+        // Open Database
+        db.open(); 
+        
+        function add_new(name,artist){
+            
+            db.transaction('rw', db.songs, function () {
+                insert_object = {name:name,artist:artist};
+                db.songs.add(insert_object);
+            }).catch(function(err) {
+                console.error(err.stack || err);
+            });    
+        }
+
+        //add_new("All Time Low","Jon Bellion");//default content
+        document.querySelector("button").addEventListener("click",function(e){
+            add_new(document.getElementById("name").value,document.getElementById("artist").value);
+        });
+    </script>
+
+ </body>
+</html>
