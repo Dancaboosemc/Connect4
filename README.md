@@ -20,17 +20,19 @@ We are doing this becauuse the provided playlist creator on spotify has some fla
 * [Contact](#contact)
 
 ## General info
-Add more general information about project. What the purpose of the project is? Motivation?
+Create a web app that has alternative music discovery features not offered within the official spotify app.
 
 ## Screenshots
 ![Example screenshot](./img/screenshot.png)
 
 ## Technologies
-* Spotify Api - https://developer.spotify.com/documentation/web-api/
-* Spotify Api Endpoints - https://developer.spotify.com/documentation/web-api/reference/#category-playlists
-* Spotify Api (possible wrappers) - https://developer.spotify.com/documentation/web-api/libraries/
-* Spotify Web Playback SDK - https://developer.spotify.com/documentation/web-playback-sdk/
-* Tech 3 - version 3.0
+* [Spotify Api](https://developer.spotify.com/documentation/web-api/)
+* [Spotify Api Endpoints](https://developer.spotify.com/documentation/web-api/reference/#category-playlists)
+* [Spotify Api (possible wrappers)](https://developer.spotify.com/documentation/web-api/libraries/)
+* [Spotify Web Playback SDK](https://developer.spotify.com/documentation/
+* [Tech 3 - version 3.0]()
+* [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API)
+* [Dexie.js](https://dexie.org/)
 
 ## Setup
 Describe how to install / setup your local environement / add link to demo version.
