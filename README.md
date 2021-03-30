@@ -50,6 +50,10 @@ Show examples of usage:
 
 * Favorites Info Playlist creator - Feature will allow users to have "New Music" playlists created based on their favorites playlist. (Dan user story)
 
+* Database Implementation - Feature will allow songs and artist info to be stored locally on the machine. This will also include spotify credentials. (Max)
+
+* Client Credentials retrieval/User Authentication - Will allow the user to access the spotify api with their spotify account credentials. (Austin)
+
 ## To-do list:
 * Wow improvement to be done 1
 * Wow improvement to be done 2
