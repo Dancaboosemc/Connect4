@@ -58,7 +58,9 @@ Web application that will,
 
 
 ## Screenshots
-![Example screenshot](./img/screenshot.png)
+![UI Mockup](./img/GUIMockup1.png)
+
+![UI Mockup (Logged In)](./img/GUIMockup2.png)
 
 ## Technologies
 * [Spotify Api](https://developer.spotify.com/documentation/web-api/)
