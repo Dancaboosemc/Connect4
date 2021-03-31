@@ -12,7 +12,9 @@ We are doing this becauuse the provided playlist creator on spotify has some fla
 				Artifact: Word document with the GET lines for music.
 				          Word document with links that have info on what is needed to extract music for app
 		Artifact Location:Israel branch
+		
 -Documentation of Application Features, added to Readme (Dan)
+
 -Design Mockup of User Interface. In ./img and added to Readme (Dan)
 ## Spring 1 
 
