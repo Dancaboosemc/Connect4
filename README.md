@@ -27,7 +27,34 @@ We are doing this becauuse the provided playlist creator on spotify has some fla
 * [Contact](#contact)
 
 ## General info
-Create a web app that has alternative music discovery features not offered within the official spotify app.
+Web application that will, 
+
+•	generate playlist based off of criterion 
+
+	o	Favorite
+
+			Artist
+
+			Genre
+
+			other Metadata
+
+	o	Ignore
+
+			Song
+
+			Artist
+
+			Genre
+
+			other Metadata
+
+•	allow for editing of criterion – criterion editor menu
+
+•	have song playback functionality
+
+•	export playlist to Spotfiy interface
+
 
 ## Screenshots
 ![Example screenshot](./img/screenshot.png)
@@ -61,12 +88,37 @@ Show examples of usage:
 
 * Client Credentials retrieval/User Authentication - Will allow the user to access the spotify api with their spotify account credentials. (Austin)
 
+Favorite Criterion: will use the user’s Spotify info to access their “Liked Song’s” playlist to create initial Favorite Criterion. 
+After initial creation, the lists are stored on the user’s machine. User will be able to add to the list by “liking” a song in the 
+app and will be able to remove it in the criterion editor menu, or by hitting the “like” button again. 
+
+Ignore Criterion: initially an empty list stored on user’s machine. User will be able to add to the list by disliking a 
+song, artist or genre, and can remove them from the ignore list through the criterion editor menu, or by hitting the dislike button again.
+
+Generated playlist: List of songs and song info, that allow songs to be played or paused, and to be liked or disliked.
+
+Playlist Controller: Located at bottom of window and is static through all menus, has controls for song order (Shuffle/Repeat), 
+controls for the currently playing song (Play/Pause/Restart), as well as “Next song”, “Previous song”, and volume control.
+
+Playlist generator: finds songs similar to favorites/mood criterion and ignores songs that match the ignore criteria.
+
 ## To-do list:
-* Wow improvement to be done 1
-* Wow improvement to be done 2
+Get simple application running
+
+Apply User Interface
+
+Implement Spotify Login
+
+Implement Logged in Unser Interface
+
+Implement Playlist Gentration and UI
+
+Implement Playback Functionality
 
 ## Status
+Austin - Out due to Emergency
 
+Daniel - Assigned to get a blank web app functional. blocked due to inexperiance developing web applications.
 
 ## Inspiration
 We are doing this becauuse the provided playlist creator on spotify has some flaws that could be improved upon.
