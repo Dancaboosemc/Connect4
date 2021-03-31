@@ -75,8 +75,7 @@ Web application that will,
 N/A
 
 ## Code Examples
-Show examples of usage:
-`put-your-code-here`
+No running code, First sprint spent on researching capabilities of spotify api and sdk
 
 ## Features
 * Do Not Play Button - Feature will allow users to select Do Not Play for song or artist that will stop that song/artist from being included in future playlists.(Austin, Dan user stories)
@@ -121,7 +120,7 @@ Implement Playback Functionality
 ## Status
 Austin - Out due to Emergency
 
-Daniel - Assigned to get a blank web app functional. blocked due to inexperiance developing web applications.
+Daniel - Assigned to get a blank web app functional. blocked due to inexperiance developing web applications. Currently seeking help from Instructor.
 
 ## Inspiration
 We are doing this becauuse the provided playlist creator on spotify has some flaws that could be improved upon.
