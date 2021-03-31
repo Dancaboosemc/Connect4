@@ -13,7 +13,7 @@ We are doing this becauuse the provided playlist creator on spotify has some fla
 				          Word document with links that have info on what is needed to extract music for app
 		Artifact Location:Israel branch
 -Documentation of Application Features, added to Readme (Dan)
--Design Mockup of User Interface. ![img](./img) (Dan)
+-Design Mockup of User Interface. In ./img and added to Readme (Dan)
 ## Spring 1 
 
 
