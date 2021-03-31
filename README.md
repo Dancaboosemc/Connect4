@@ -42,7 +42,7 @@ Create a web app that has alternative music discovery features not offered withi
 * [Dexie.js](https://dexie.org/)
 
 ## Setup
-Describe how to install / setup your local environement / add link to demo version.
+N/A
 
 ## Code Examples
 Show examples of usage:
@@ -66,17 +66,11 @@ Show examples of usage:
 * Wow improvement to be done 2
 
 ## Status
-Daniel-
-Backlogging GUI and button coding tasks, need further research into how to properply implement GUI for a web app.
-Completed 1st iteration of Design Document.
-Investigating on designing GUI using javascript/Electron
-Completed Mockup of GUI.
 
-Unclaimed-
-Moving List creation tasks to backlog. Not enough time left in sprint
 
 ## Inspiration
-Add here credits. Project inspired by..., based on...
+We are doing this becauuse the provided playlist creator on spotify has some flaws that could be improved upon.
 
 ## Contact
 Created by [@flynerdpl](https://www.flynerd.pl/) - feel free to contact me!
+Daniel McPherson dam344@txstate.edu 
