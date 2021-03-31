@@ -7,6 +7,13 @@ Audience is spotify users who aren't always happy with the spotify created playl
 
 We are doing this becauuse the provided playlist creator on spotify has some flaws that could be improved upon.
 
+## Sprint 1 accomplishments
+-Research for Spotify API (locating the GET lines needed for acquaring music info)
+				Artifact: Word document with the GET lines for music.
+				          Word document with links that have info on what is needed to extract music for app
+		Artifact Location:Israel branch
+
+## Spring 1 
 
 
 ## Table of contents
