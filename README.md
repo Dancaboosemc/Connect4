@@ -11,12 +11,13 @@ We are doing this becauuse the provided playlist creator on spotify has some fla
 -Research for Spotify API (locating the GET lines needed for acquaring music info)
 				Artifact: Word document with the GET lines for music.
 				          Word document with links that have info on what is needed to extract music for app
-		Artifact Location:Israel branch
+		Artifact Location:Israel branch (Israel)
+		One of the links in Word Doc.
+		https://developer.spotify.com/documentation/web-api/reference/#category-playlists
 		
 -Documentation of Application Features, added to Readme (Dan)
 
 -Design Mockup of User Interface. In ./img and added to Readme (Dan)
-## Spring 1 
 
 
 ## Table of contents
@@ -122,8 +123,15 @@ Implement Playback Functionality
 ## Status
 Austin - Out due to Emergency
 
+Status for (Dan, Max, Israel):
+
+Spotify Application will be terminated for new project
+
 Due to Inexperiance of team and missing member, remaining member are investigating changing projects to improving existing code for
-a game of checkers checkers 
+a game of checkers checkers
+
+Locating a java checkers game that will be improved
+
 
 ## Inspiration
 We are doing this becauuse the provided playlist creator on spotify has some flaws that could be improved upon.
