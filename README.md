@@ -122,7 +122,8 @@ Implement Playback Functionality
 ## Status
 Austin - Out due to Emergency
 
-Daniel - Assigned to get a blank web app functional. blocked due to inexperiance developing web applications. Currently seeking help from Instructor.
+Due to Inexperiance of team and missing member, remaining member are investigating changing projects to improving existing code for
+a game of checkers checkers 
 
 ## Inspiration
 We are doing this becauuse the provided playlist creator on spotify has some flaws that could be improved upon.
