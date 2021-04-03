@@ -128,9 +128,9 @@ Status for (Dan, Max, Israel):
 Spotify Application will be terminated for new project
 
 Due to Inexperiance of team and missing member, remaining member are investigating changing projects to improving existing code for
-a game of checkers checkers
+a game of connect 4
 
-Locating a java checkers game that will be improved
+Locating a java connect 4 game that will be improved
 
 
 ## Inspiration
