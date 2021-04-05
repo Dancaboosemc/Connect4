@@ -19,9 +19,11 @@ public class GameGUI extends JFrame {
     JButton restart = new JButton("Restart");
     int clicks[] = new int[]{0,0,0,0,0,0,0,0};
 
+    /*
     public static void main (String[] args){
         new GameGUI();
     }
+    */
 
     public GameGUI(){
         super("Connect Four!");
