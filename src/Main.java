@@ -1,5 +1,8 @@
 public class Main {
     public static void main(String[] args){
-        Connect4 c4 = new Connect4();
+        GameGUI gui = new GameGUI();
+        Board board = new Board();
+        gameMGR g = new gameMGR(gui, board);
+        g.initController();
     }
 }

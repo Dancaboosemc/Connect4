@@ -39,6 +39,10 @@ public class Board {
         return b;
     }
 
+    public void setBoard(int [][] brd) {
+        b = brd;
+    }
+
     public boolean isWin(int c, int r){
         int boardPos = b[c][r];
         int count = 0;
@@ -122,4 +126,5 @@ public class Board {
             return true;
         return false;
     }
+
 }
