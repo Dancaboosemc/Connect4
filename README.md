@@ -1,19 +1,6 @@
 # Connect Four Desktop App
 Austin Maldonado, Max Murray, Israel Carcamo, Daniel McPherson
 
-## Sprint 1 accomplishments
--Research for Spotify API (locating the GET lines needed for acquaring music info)
-				Artifact: Word document with the GET lines for music.
-				          Word document with links that have info on what is needed to extract music for app
-		Artifact Location:Israel branch (Israel)
-		One of the links in Word Doc.
-		https://developer.spotify.com/documentation/web-api/reference/#category-playlists
-		
--Documentation of Application Features, added to Readme (Dan)
-
--Design Mockup of User Interface. In ./img and added to Readme (Dan)
-
-
 ## Table of contents
 * [General info](#general-info)
 * [Screenshots](#screenshots)
@@ -25,12 +12,14 @@ Austin Maldonado, Max Murray, Israel Carcamo, Daniel McPherson
 * [Contact](#contact)
 
 ## General info
-
+	We have taken code designed for a 2 player Connect 4 console game. We are redesigninging to be easily implemented with GUI, 
+	designing our own GUI using java.swing, and adding features such as saving and loading games and implementing an AI player.
 ## Screenshots
 
 
 ## Technologies
-
+Java
+Java swing
 
 ## Setup
 N/A
@@ -39,14 +28,29 @@ N/A
 
 
 ## Features
+GUI
 
+save/load
+
+Local 2 player
+
+1 player vs AI
 
 ## To-do list:
-Implement
+Implement save/load feature
 
+GUI Board Graphics
+
+AI Implementation
 
 ## Status
 Austin - Leave of Absence
+
+Daniel - GUI design
+
+Max - Connect4 class design
+
+Isreal - class integration
 
 
 ## Inspiration
