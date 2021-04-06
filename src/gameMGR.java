@@ -38,9 +38,9 @@ private Board board;
         for(int i = 0; i < board.boardWidth; i++)
             System.out.print("-");
         System.out.print("\n");
-        for(int x = 0; x < board.boardHeight; x++){
+        for(int x = board.boardHeight-1; x >= 0; x--){
             for(int y = 0; y < board.boardWidth; y++){
-                System.out.print(brd[x][y]);
+                System.out.print(brd[y][x] + "  ");
             }
             System.out.print("\n");
         }
@@ -50,30 +50,54 @@ private Board board;
     }
 
     public void saveFirstC(){
-
+        if(board.isColumnPlayable(0)){
+            board.addToColumn(0,plyrTrn());
+        }
+        showBoard(board.getBoard());
     }
 
     public void saveScnd(){
-
+        if(board.isColumnPlayable(1)){
+            board.addToColumn(1,plyrTrn());
+        }
+        showBoard(board.getBoard());
     }
     public void saveThrd(){
-
+        if(board.isColumnPlayable(2)){
+            board.addToColumn(2,plyrTrn());
+        }
+        showBoard(board.getBoard());
     }
 
     public void saveFrth(){
-
+        if(board.isColumnPlayable(3)){
+            board.addToColumn(3,plyrTrn());
+        }
+        showBoard(board.getBoard());
     }
     public void saveFth(){
-
+        if(board.isColumnPlayable(4)){
+            board.addToColumn(4,plyrTrn());
+        }
+        showBoard(board.getBoard());
     }
     public void saveSxth(){
-
+        if(board.isColumnPlayable(5)){
+            board.addToColumn(5,plyrTrn());
+        }
+        showBoard(board.getBoard());
     }
     public void saveSvnth(){
-
+        if(board.isColumnPlayable(6)){
+            board.addToColumn(6,plyrTrn());
+        }
+        showBoard(board.getBoard());
     }
     public void saveEgth(){
-
+        if(board.isColumnPlayable(7)){
+            board.addToColumn(7,plyrTrn());
+        }
+        showBoard(board.getBoard());
     }
 
     public int plyrTrn(){

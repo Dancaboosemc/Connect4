@@ -11,7 +11,7 @@ public class Board {
         totalMoves = 0;
     }
 
-    public boolean addToColumn(int c, int playerNum){
+    public void addToColumn(int c, int playerNum){
         int i;
         for(i = 0; i < boardHeight; i++){
             if(b[c][i] == 0){
@@ -20,11 +20,11 @@ public class Board {
             }
         }
         totalMoves++;
-        if(totalMoves > 3)
+        /*if(totalMoves > 3)
             return isWin(c, i);
         else
             return false;
-        
+        */
     }
 
     public boolean isColumnPlayable(int c){
