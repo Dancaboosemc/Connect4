@@ -9,6 +9,7 @@ private Board board;
         board = b;
     }
 
+    //Connects gui buttons to the methods in this class
     public void initController(){
         gui.startB.addActionListener(e -> startGame());
         gui.column1.addActionListener(e -> saveFirstC());
@@ -22,6 +23,11 @@ private Board board;
         gui.restart.addActionListener(e -> startGame());
     }
 
+    /*
+    startGame():
+    -Sets board up
+    -Shows board to user
+     */
     public void startGame(){
         int [][] brd = board.getBoard();
         for(int i = 0; i < board.boardHeight; i++){
@@ -34,6 +40,11 @@ private Board board;
         board.totalMoves = 0;
     }
 
+    /*
+    showBoard():
+    -two for loops (1st & 4th) to set dividers
+    -two for loops (one nested) to show the info in 2D array
+     */
     public void showBoard(int [][] brd){
         for(int i = 0; i < board.boardWidth; i++)
             System.out.print("-");
@@ -43,63 +54,112 @@ private Board board;
                 System.out.print(brd[y][x] + "  ");
             }
             System.out.print("\n");
+        }/*
+        for(int x = 0; x < board.boardHeight; x++){
+            for(int y = 0; y < board.boardWidth; y++){
+                System.out.print(brd[x][y]);
+            }
+            System.out.print("\n");
         }
+        */
         for(int i = 0; i < board.boardWidth; i++)
             System.out.print("-");
         System.out.print("\n");
     }
-
+    /*
+    saveFirstC()-saveEgth():
+    -checks if the column selected is playable
+    -checks calls board.addToColumn to enter players move, then checks if player won
+    -if player won, display winner, only display reset button
+     */
     public void saveFirstC(){
         if(board.isColumnPlayable(0)){
-            board.addToColumn(0,plyrTrn());
+           if(board.addToColumn(0,plyrTrn())){
+               System.out.print("Winner");
+               resetButtons();
+           }
         }
         showBoard(board.getBoard());
+        checkIfStale();
     }
 
-    public void saveScnd(){
-        if(board.isColumnPlayable(1)){
-            board.addToColumn(1,plyrTrn());
+    public void saveScnd() {
+        if (board.isColumnPlayable(1)) {
+            if (board.addToColumn(1, plyrTrn())) {
+                System.out.print("Winner");
+                resetButtons();
+                checkIfStale();
+            }
         }
         showBoard(board.getBoard());
+        checkIfStale();
     }
     public void saveThrd(){
-        if(board.isColumnPlayable(2)){
-            board.addToColumn(2,plyrTrn());
+        if (board.isColumnPlayable(2)) {
+            if (board.addToColumn(2, plyrTrn())) {
+                System.out.print("Winner");
+                resetButtons();
+            }
         }
         showBoard(board.getBoard());
+        checkIfStale();
     }
 
     public void saveFrth(){
-        if(board.isColumnPlayable(3)){
-            board.addToColumn(3,plyrTrn());
+        if (board.isColumnPlayable(3)) {
+            if (board.addToColumn(3, plyrTrn())) {
+                System.out.print("Winner");
+                resetButtons();
+            }
         }
         showBoard(board.getBoard());
+        checkIfStale();
     }
     public void saveFth(){
-        if(board.isColumnPlayable(4)){
-            board.addToColumn(4,plyrTrn());
+        if (board.isColumnPlayable(4)) {
+            if (board.addToColumn(4, plyrTrn())) {
+                System.out.print("Winner");
+                resetButtons();
+            }
         }
         showBoard(board.getBoard());
+        checkIfStale();
     }
     public void saveSxth(){
-        if(board.isColumnPlayable(5)){
-            board.addToColumn(5,plyrTrn());
+        if (board.isColumnPlayable(5)) {
+            if (board.addToColumn(5, plyrTrn())) {
+                System.out.print("Winner");
+                resetButtons();
+            }
         }
         showBoard(board.getBoard());
+        checkIfStale();
     }
     public void saveSvnth(){
-        if(board.isColumnPlayable(6)){
-            board.addToColumn(6,plyrTrn());
+        if (board.isColumnPlayable(6)) {
+            if (board.addToColumn(6, plyrTrn())) {
+                System.out.print("Winner");
+                resetButtons();
+            }
         }
         showBoard(board.getBoard());
+        checkIfStale();
     }
     public void saveEgth(){
-        if(board.isColumnPlayable(7)){
-            board.addToColumn(7,plyrTrn());
+        if (board.isColumnPlayable(7)) {
+            if (board.addToColumn(7, plyrTrn())) {
+                System.out.print("Winner");
+                resetButtons();
+            }
         }
         showBoard(board.getBoard());
+        checkIfStale();
     }
 
+    /*
+    plyrTrn():
+    keeps track of who's turn it is
+     */
     public int plyrTrn(){
         int playerNum = board.totalMoves;
         if(playerNum % 2 == 0)
@@ -109,4 +169,26 @@ private Board board;
         return playerNum;
     }
 
+    /*
+    hides column buttons
+     */
+    public void resetButtons(){
+        gui.column1.setVisible(false);
+        gui.column2.setVisible(false);
+        gui.column3.setVisible(false);
+        gui.column4.setVisible(false);
+        gui.column5.setVisible(false);
+        gui.column6.setVisible(false);
+        gui.column7.setVisible(false);
+        gui.column8.setVisible(false);
+    }
+
+    /*
+    checks if game is at a stalemate by cheking if maximum amount of moves have been played
+     */
+    public void checkIfStale(){
+        if(board.isFull()){
+            System.out.print("\nGame is at a stalemate\n");
+        }
+    }
 }

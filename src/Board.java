@@ -11,7 +11,7 @@ public class Board {
         totalMoves = 0;
     }
 
-    public void addToColumn(int c, int playerNum){
+    public boolean addToColumn(int c, int playerNum){
         int i;
         for(i = 0; i < boardHeight; i++){
             if(b[c][i] == 0){
@@ -20,11 +20,12 @@ public class Board {
             }
         }
         totalMoves++;
-        /*if(totalMoves > 3)
-            return isWin(c, i);
+        if(totalMoves > 6)
+        {//System.out.print("This is the i : " + i);
+            return isWin(c, i);}
         else
             return false;
-        */
+
     }
 
     public boolean isColumnPlayable(int c){
@@ -47,20 +48,24 @@ public class Board {
         int boardPos = b[c][r];
         int count = 0;
         int i = c;
-
+        //System.out.print("In is win");
         //horizontal
         //while positions left and right of boardPos = playerNum and inbounds
         //left
-        while(b[i][r] == boardPos && i >=0){
+
+        while( (i>=0) && (b[i][r] == boardPos)){
+          //  System.out.print("the value being checked in " + b[i][r]);
             count++;
             i--;
         }
+        //System.out.print("Back out of while loop, into 2nd while loop \n");
         //right
         i = c+1;
-        while(b[i][r] == boardPos && i < boardWidth){
+        while((i < boardWidth) && (b[i][r] == boardPos)){
             count++;
             i++;
         }
+        //System.out.print("Out of 2nd while loop \n");
         if(count == 4)
             return true;
 
@@ -69,16 +74,20 @@ public class Board {
         //up
         count = 0;
         int j = r;
-        while(b[c][j] == boardPos && j < boardHeight){
+        while((j < boardHeight) && (b[c][j] == boardPos)){
             count++;
             j++;
+            //System.out.print("\ninside 3rd while loop\n ");
         }
         //down
+        //System.out.print("\nexit 3rd enter 4th\n" );
         j = r-1;
-        while(b[c][j] == boardPos && j>=0){
+        while((j>=0) && (b[c][j] == boardPos)){
             count++;
             j--;
         }
+
+        //System.out.print("\nexit 4th while loop\n");
         if(count == 4)
             return true;
         
@@ -88,7 +97,7 @@ public class Board {
         count = 0;
         i = c;
         j = r;
-        while(b[i][j] == boardPos && i < boardWidth && j < boardHeight){
+        while((i < boardWidth) && (j < boardHeight) && (b[i][j] == boardPos)){
             count++;
             i++;
             j++;
@@ -96,7 +105,7 @@ public class Board {
         //left
         i = c - 1;
         j = r - 1;
-        while(b[i][j] == boardPos && i >= 0 && j >= 0){
+        while((i>=0) && (j>=0) && (b[i][j] == boardPos)){
             count++;
             i--;
             j--;
@@ -109,7 +118,7 @@ public class Board {
         count = 0;
         i = c;
         j = r;
-        while(b[i][j] == boardPos && i < boardWidth && j >= 0){
+        while((i<boardWidth) && (j>=0) && (b[i][j] == boardPos)){
             count++;
             i++;
             j--;
@@ -117,14 +126,16 @@ public class Board {
         //left c--/r++
         i = c - 1;
         j = r + 1;
-        while(b[i][j] == boardPos && i >= 0 && j < boardHeight){
+        while((i>=0) && (j < boardHeight) && (b[i][j] == boardPos)){
             count++;
             i--;
             j++;
         }
+        //System.out.print("\n\nmade it through the whole method  !!!!!!!!!!\n");
         if(count == 4)
             return true;
         return false;
+
     }
 
 }
