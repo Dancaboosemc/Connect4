@@ -1,6 +1,8 @@
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JButton;
+import javax.swing.ImageIcon;
 import java.awt.*;
 import java.awt.event.*;
 
@@ -18,17 +20,18 @@ public class GameGUI extends JFrame {
     JButton column8 = new JButton("Column 8");
     JButton restart = new JButton("Restart");
     int clicks[] = new int[]{0,0,0,0,0,0,0,0};
+    //////////////////////////////////////////////////////
 
-    /*
-    public static void main (String[] args){
-        new GameGUI();
-    }
-    */
+    ImageIcon img = new ImageIcon("blackpiece.png");
+    JLabel space = new JLabel(img);
+
+    //////////////////////////////////////////////////////
 
     public GameGUI(){
         super("Connect Four!");
         setSize(800, 800);
         setResizable(true);
+        startP.setBackground(Color.yellow);
         startP.add(startB);
         startP.add(column1);
         startP.add(column2);
@@ -38,6 +41,11 @@ public class GameGUI extends JFrame {
         startP.add(column6);
         startP.add(column7);
         startP.add(column8);
+
+        //////////////////////////////////
+        startP.add(space);
+        /////////////////////////////////
+
         startP.add(restart);
         column1.setVisible(false);
         column2.setVisible(false);
@@ -47,8 +55,14 @@ public class GameGUI extends JFrame {
         column6.setVisible(false);
         column7.setVisible(false);
         column8.setVisible(false);
+
+        ///////////////////////////////////////
+        space.setVisible(false);
+        ///////////////////////////////////
+        
         restart.setVisible(false);
         add(startP);
+        validate();
         startB.addActionListener(new StartActionListener());
         restart.addActionListener(new RestartActionListener());
         column1.addActionListener(new Column1ActionListener());
@@ -76,6 +90,11 @@ public class GameGUI extends JFrame {
             column6.setVisible(true);
             column7.setVisible(true);
             column8.setVisible(true);
+
+            //////////////////////////////
+            space.setVisible(true);
+            //////////////////////////
+
             restart.setVisible(true);
         }
      }
