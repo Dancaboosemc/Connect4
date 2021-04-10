@@ -3,6 +3,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JButton;
 import javax.swing.ImageIcon;
+import javax.swing.JTextField;
 import java.awt.*;
 import java.awt.event.*;
 
@@ -19,6 +20,10 @@ public class GameGUI extends JFrame {
     JButton column7 = new JButton("Column 7");
     JButton column8 = new JButton("Column 8");
     JButton restart = new JButton("Restart");
+    JButton save = new JButton("Save Game");
+    JButton load = new JButton("Load Game");
+    JTextField winner = new JTextField("Winner");
+
     int clicks[] = new int[]{0,0,0,0,0,0,0,0};
     //////////////////////////////////////////////////////
 
@@ -33,6 +38,9 @@ public class GameGUI extends JFrame {
         setResizable(true);
         startP.setBackground(Color.yellow);
         startP.add(startB);
+        startP.add(save);
+        startP.add(load);
+        //startP.add(winner);
         startP.add(column1);
         startP.add(column2);
         startP.add(column3);
@@ -82,6 +90,8 @@ public class GameGUI extends JFrame {
     class StartActionListener implements ActionListener{
         public void actionPerformed(ActionEvent e) {
             startB.setVisible(false);
+            save.setVisible(false);
+            load.setVisible(false);
             column1.setVisible(true);
             column2.setVisible(true);
             column3.setVisible(true);
@@ -102,6 +112,8 @@ public class GameGUI extends JFrame {
      class RestartActionListener implements ActionListener{
         public void actionPerformed(ActionEvent e) {
             startB.setVisible(true);
+            save.setVisible(true);
+            load.setVisible(true);
             column1.setVisible(false);
             column2.setVisible(false);
             column3.setVisible(false);
