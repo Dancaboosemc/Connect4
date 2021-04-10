@@ -1,4 +1,9 @@
-
+import java.io.IOException;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileInputStream;
+import java.io.ObjectOutputStream;
+import java.io.ObjectInputStream;
 
 public class gameMGR {
 private GameGUI gui;
@@ -38,6 +43,58 @@ private Board board;
         board.setBoard(brd);
         showBoard(board.getBoard());
         board.totalMoves = 0;
+    }
+
+    /*
+    saveGame():
+    -Saves board in board.txt
+    -Saves gui in gui.txt
+    */
+    public static void saveGame(Board b, GameGUI g)throws IOException{
+        String gfn = "gui.txt";
+        String bfn = "board.txt";
+
+        FileOutputStream fos = new FileOutputStream(gfn);
+        ObjectOutputStream oos = new ObjectOutputStream(fos);
+
+        oos.writeObject(g);
+        oos.close();
+        fos.close();
+
+        fos = new FileOutputStream(bfn);
+        oos = new ObjectOutputStream(fos);
+
+        oos.writeObject(b);
+        oos.close();
+        fos.close();
+    }
+
+    /*
+    savedBoardIn():
+    -returns the previously saved board
+    */
+    public static Board savedBoardIn()throws FileNotFoundException, IOException, ClassNotFoundException{
+        String bfn = "board.txt";
+        FileInputStream fin = new FileInputStream(bfn);
+        ObjectInputStream ois = new ObjectInputStream(fin);
+        Board loadedBoard = (Board)ois.readObject();
+        ois.close();
+        fin.close();
+        return loadedBoard;
+    }
+
+    /*
+    savedGUIIn():
+    -returns the previously saved gui
+    */
+    public static GameGUI savedGUIIn()throws FileNotFoundException, IOException, ClassNotFoundException{
+        String gfn = "gui.txt";
+        FileInputStream fin = new FileInputStream(gfn);
+        ObjectInputStream ois = new ObjectInputStream(fin);
+        GameGUI loadedGUI = (GameGUI)ois.readObject();
+        ois.close();
+        fin.close();
+        return loadedGUI;
     }
 
     /*
