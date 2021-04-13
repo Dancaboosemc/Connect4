@@ -50,7 +50,7 @@ AI Implementation
 ## Status
 Austin - Leave of Absence
 
-Daniel - GUI design, Implemented GUI (GameGUI.java): class extends Jframe from javax.swing. Jframe has the default layout. Has one panel that holds the all the buttons and the textbox. 
+Daniel - GUI design, Implemented GUI (./src/GameGUI.java): class extends Jframe from javax.swing. Jframe has the default layout. Has one panel that holds the all the buttons and the textbox. 
 Core game buttons are implmented. Some buttons are place holders until other fetures are functional. Ex: save/load buttons. Had issues getting images to appear. 
 Issue could be related to layout setting. Game board gui implemntation has been backlogged. Next steps are to redesign Jframe layout then address the board images.
 
