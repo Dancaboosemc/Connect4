@@ -47,6 +47,8 @@ GUI Board Graphics
 
 AI Implementation
 
+Sound Effects
+
 ## Status
 Austin - Leave of Absence
 
