@@ -54,7 +54,7 @@ Daniel - Intial Project Design (notes: ./documents/Battle_plan.docx). GUI design
 Core game buttons are implmented. Some buttons are place holders until other fetures are functional. Ex: save/load buttons. Issues getting images to appear. 
 Issue could be related to layout setting. Game board gui implemntation has been backlogged. Next steps are to redesign Jframe layout then address the board images.
 
-Max - Connect4 class design
+Max - Board class design. refactored reference file into a new usable board class. save/load function design.
 
 Isreal - class integration
 
