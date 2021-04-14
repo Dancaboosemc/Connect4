@@ -58,7 +58,11 @@ Issue could be related to layout setting. Game board gui implemntation has been 
 
 Max - Board class design. refactored reference file into a new usable board class. save/load function design.
 
-Isreal - class integration
+
+Isreal - class integration. Sprint 2 achievements. Methods for start and restart button implemented (which start or restart the game).
+Implemented methods and action listeners that saves the piece in the column that the player choses. Implemented methods that let the 
+players know the state of the game (wether the player has won/tied). All located in (src/gameMGR.java). gameMGR.java also shows what is 
+saved in the 2D array (game board). Next step is designing an Ai for the user to play with. 
 
 
 ## Inspiration
