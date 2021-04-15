@@ -49,6 +49,8 @@ AI Implementation
 
 Sound Effects
 
+Avatars
+
 ## Status
 Austin - Leave of Absence
 
