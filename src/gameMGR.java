@@ -166,6 +166,7 @@ private Board board;
             playerNum = 1;
         else
             playerNum = 2;
+        gui.setPlayerTurn(playerNum);
         return playerNum;
     }
 

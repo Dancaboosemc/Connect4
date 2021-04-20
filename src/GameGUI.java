@@ -7,10 +7,15 @@ import javax.swing.JTextField;
 import java.awt.*;
 import java.awt.event.*;
 
+
+
 public class GameGUI extends JFrame {
 
+    int playerTurn = 0;
     JPanel startP = new JPanel();
-    JButton startB = new JButton("Start Game");
+    JButton startB = new JButton("2 Player");
+    JButton aiEzB= new JButton("VS Easy AI");
+    JButton aiNrB= new JButton("VS Normal AI");
     JButton column1 = new JButton("Column 1");
     JButton column2 = new JButton("Column 2");
     JButton column3 = new JButton("Column 3");
@@ -25,20 +30,17 @@ public class GameGUI extends JFrame {
     JTextField winner = new JTextField("Winner");
 
     int clicks[] = new int[]{0,0,0,0,0,0,0,0};
-    //////////////////////////////////////////////////////
-
-    ImageIcon img = new ImageIcon("blackpiece.png");
-    JLabel space = new JLabel(img);
-
-    //////////////////////////////////////////////////////
+    JLabel[][] space = new JLabel[8][8];
 
     public GameGUI(){
+
         super("Connect Four!");
-        setSize(800, 800);
-        setResizable(true);
-        startP.setBackground(Color.yellow);
+        setSize(865, 950);
+        setResizable(false);
+        startP.setBackground(Color.DARK_GRAY);
         startP.add(startB);
-        startP.add(save);
+        startP.add(aiEzB);
+        startP.add(aiNrB);
         startP.add(load);
         //startP.add(winner);
         startP.add(column1);
@@ -50,11 +52,18 @@ public class GameGUI extends JFrame {
         startP.add(column7);
         startP.add(column8);
 
-        //////////////////////////////////
-        startP.add(space);
-        /////////////////////////////////
+        for(int i = 0; i < 8 ; i++){
+            for(int j = 0; j < 8 ; j++){
+                space[i][j] = new JLabel();
+                space[i][j].setIcon(new ImageIcon("blankspace.png"));
+                startP.add(space[i][j]);
+                space[i][j].setVisible(false);
+            }
+        }
 
         startP.add(restart);
+        startP.add(save);
+
         column1.setVisible(false);
         column2.setVisible(false);
         column3.setVisible(false);
@@ -63,15 +72,17 @@ public class GameGUI extends JFrame {
         column6.setVisible(false);
         column7.setVisible(false);
         column8.setVisible(false);
-
-        ///////////////////////////////////////
-        space.setVisible(false);
-        ///////////////////////////////////
         
+        save.setVisible(false);
         restart.setVisible(false);
+
         add(startP);
+
         validate();
+
         startB.addActionListener(new StartActionListener());
+        aiEzB.addActionListener(new VsEzAiActionListener());
+        aiNrB.addActionListener(new VsNrAiActionListener());
         restart.addActionListener(new RestartActionListener());
         column1.addActionListener(new Column1ActionListener());
         column2.addActionListener(new Column2ActionListener());
@@ -90,7 +101,9 @@ public class GameGUI extends JFrame {
     class StartActionListener implements ActionListener{
         public void actionPerformed(ActionEvent e) {
             startB.setVisible(false);
-            save.setVisible(false);
+            aiEzB.setVisible(false);
+            aiNrB.setVisible(false);
+            save.setVisible(true);
             load.setVisible(false);
             column1.setVisible(true);
             column2.setVisible(true);
@@ -102,7 +115,67 @@ public class GameGUI extends JFrame {
             column8.setVisible(true);
 
             //////////////////////////////
-            space.setVisible(true);
+            for(int i = 0; i < 8 ; i++){
+                for(int j = 0; j < 8 ; j++){
+                    space[i][j].setVisible(true);
+                }
+            }
+            //////////////////////////
+
+            restart.setVisible(true);
+        }
+     }
+
+     class VsEzAiActionListener implements ActionListener{
+        public void actionPerformed(ActionEvent e) {
+            startB.setVisible(false);
+            aiEzB.setVisible(false);
+            aiNrB.setVisible(false);
+            save.setVisible(true);
+            load.setVisible(false);
+            column1.setVisible(true);
+            column2.setVisible(true);
+            column3.setVisible(true);
+            column4.setVisible(true);
+            column5.setVisible(true);
+            column6.setVisible(true);
+            column7.setVisible(true);
+            column8.setVisible(true);
+
+            //////////////////////////////
+            for(int i = 0; i < 8 ; i++){
+                for(int j = 0; j < 8 ; j++){
+                    space[i][j].setVisible(true);
+                }
+            }
+            //////////////////////////
+
+            restart.setVisible(true);
+        }
+     }
+
+     class VsNrAiActionListener implements ActionListener{
+        public void actionPerformed(ActionEvent e) {
+            startB.setVisible(false);
+            aiEzB.setVisible(false);
+            aiNrB.setVisible(false);
+            save.setVisible(true);
+            load.setVisible(false);
+            column1.setVisible(true);
+            column2.setVisible(true);
+            column3.setVisible(true);
+            column4.setVisible(true);
+            column5.setVisible(true);
+            column6.setVisible(true);
+            column7.setVisible(true);
+            column8.setVisible(true);
+
+            //////////////////////////////
+            for(int i = 0; i < 8 ; i++){
+                for(int j = 0; j < 8 ; j++){
+                    space[i][j].setVisible(true);
+                }
+            }
             //////////////////////////
 
             restart.setVisible(true);
@@ -112,7 +185,9 @@ public class GameGUI extends JFrame {
      class RestartActionListener implements ActionListener{
         public void actionPerformed(ActionEvent e) {
             startB.setVisible(true);
-            save.setVisible(true);
+            aiEzB.setVisible(true);
+            aiNrB.setVisible(true);
+            save.setVisible(false);
             load.setVisible(true);
             column1.setVisible(false);
             column2.setVisible(false);
@@ -126,11 +201,22 @@ public class GameGUI extends JFrame {
             for(int i = 0; i < 8; i++){
                 clicks[i] = 0;
             }
+            for(int i = 0; i < 8 ; i++){
+                for(int j = 0; j < 8 ; j++){
+                    
+                    space[i][j].setVisible(false);
+                    space[i][j].setIcon(new ImageIcon("blankspace.png"));
+                }
+            }
         }
      }
 
     class Column1ActionListener implements ActionListener{
          public void actionPerformed(ActionEvent e) {
+            if(playerTurn == 1)
+                space[7-clicks[0]][0].setIcon(new ImageIcon("blackpiece.png"));
+            else
+                space[7-clicks[0]][0].setIcon(new ImageIcon("redpiece.png"));
             clicks[0]++;
             if (clicks[0] >= 8)
                 column1.setVisible(false);
@@ -140,8 +226,12 @@ public class GameGUI extends JFrame {
 
     class Column2ActionListener implements ActionListener{
         public void actionPerformed(ActionEvent e) {
-           clicks[1]++;
-           if (clicks[1] >= 8)
+            if(playerTurn == 1)
+                space[7-clicks[1]][1].setIcon(new ImageIcon("blackpiece.png"));
+            else
+                space[7-clicks[1]][1].setIcon(new ImageIcon("redpiece.png"));
+            clicks[1]++;
+            if (clicks[1] >= 8)
                column2.setVisible(false);
 
        }
@@ -149,7 +239,11 @@ public class GameGUI extends JFrame {
    
    class Column3ActionListener implements ActionListener{
         public void actionPerformed(ActionEvent e) {
-        clicks[2]++;
+            if(playerTurn == 1)
+                space[7-clicks[2]][2].setIcon(new ImageIcon("blackpiece.png"));
+            else
+                space[7-clicks[2]][2].setIcon(new ImageIcon("redpiece.png"));
+            clicks[2]++;
             if (clicks[2] >= 8)
                 column3.setVisible(false);
 
@@ -158,8 +252,12 @@ public class GameGUI extends JFrame {
 
     class Column4ActionListener implements ActionListener{
         public void actionPerformed(ActionEvent e) {
-           clicks[3]++;
-           if (clicks[3] >= 8)
+            if(playerTurn == 1)
+                space[7-clicks[3]][3].setIcon(new ImageIcon("blackpiece.png"));
+            else
+                space[7-clicks[3]][3].setIcon(new ImageIcon("redpiece.png"));
+            clicks[3]++;
+            if (clicks[3] >= 8)
                column4.setVisible(false);
 
        }
@@ -167,6 +265,10 @@ public class GameGUI extends JFrame {
    
    class Column5ActionListener implements ActionListener{
         public void actionPerformed(ActionEvent e) {
+            if(playerTurn == 1)
+                space[7-clicks[4]][4].setIcon(new ImageIcon("blackpiece.png"));
+            else
+                space[7-clicks[4]][4].setIcon(new ImageIcon("redpiece.png"));
             clicks[4]++;
             if (clicks[4] >= 8)
                 column5.setVisible(false);
@@ -176,8 +278,12 @@ public class GameGUI extends JFrame {
     
     class Column6ActionListener implements ActionListener{
         public void actionPerformed(ActionEvent e) {
-           clicks[5]++;
-           if (clicks[5] >= 8)
+            if(playerTurn == 1)
+                space[7-clicks[5]][5].setIcon(new ImageIcon("blackpiece.png"));
+            else
+                space[7-clicks[5]][5].setIcon(new ImageIcon("redpiece.png"));
+            clicks[5]++;
+            if (clicks[5] >= 8)
                column6.setVisible(false);
 
        }
@@ -185,6 +291,10 @@ public class GameGUI extends JFrame {
    
    class Column7ActionListener implements ActionListener{
         public void actionPerformed(ActionEvent e) {
+            if(playerTurn == 1)
+                space[7-clicks[6]][6].setIcon(new ImageIcon("blackpiece.png"));
+            else
+                space[7-clicks[6]][6].setIcon(new ImageIcon("redpiece.png"));
             clicks[6]++;
             if (clicks[6] >= 8)
                 column7.setVisible(false);
@@ -194,10 +304,18 @@ public class GameGUI extends JFrame {
     
     class Column8ActionListener implements ActionListener{
         public void actionPerformed(ActionEvent e) {
-           clicks[7]++;
-           if (clicks[7] >= 8)
+            if(playerTurn == 1)
+                space[7-clicks[7]][7].setIcon(new ImageIcon("blackpiece.png"));
+            else
+                space[7-clicks[7]][7].setIcon(new ImageIcon("redpiece.png"));
+            clicks[7]++;
+            if (clicks[7] >= 8)
                column8.setVisible(false);
 
        }
+   }
+
+   public void setPlayerTurn(int player){
+        playerTurn = player;
    }
 }
