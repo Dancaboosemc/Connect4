@@ -10,6 +10,8 @@ import java.awt.event.*;
 public class GameGUI extends JFrame {
 
     JPanel startP = new JPanel();
+    JButton onePlayer = new JButton("1 Player");//
+    JButton twoPlayer = new JButton("2 Player");//
     JButton startB = new JButton("Start Game");
     JButton column1 = new JButton("Column 1");
     JButton column2 = new JButton("Column 2");
@@ -41,6 +43,10 @@ public class GameGUI extends JFrame {
         startP.add(save);
         startP.add(load);
         //startP.add(winner);
+        //
+        startP.add(onePlayer);
+        startP.add(twoPlayer);
+        //
         startP.add(column1);
         startP.add(column2);
         startP.add(column3);
@@ -100,6 +106,10 @@ public class GameGUI extends JFrame {
             column6.setVisible(true);
             column7.setVisible(true);
             column8.setVisible(true);
+            //
+            onePlayer.setVisible(true);
+            twoPlayer.setVisible(true);
+            //
 
             //////////////////////////////
             space.setVisible(true);
@@ -114,6 +124,10 @@ public class GameGUI extends JFrame {
             startB.setVisible(true);
             save.setVisible(true);
             load.setVisible(true);
+            //
+            onePlayer.setVisible(true);
+            twoPlayer.setVisible(true);
+            //
             column1.setVisible(false);
             column2.setVisible(false);
             column3.setVisible(false);
