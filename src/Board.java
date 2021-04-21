@@ -66,7 +66,7 @@ public class Board {
             i++;
         }
         //System.out.print("Out of 2nd while loop \n");
-        if(count == 4)
+        if(count >= 4)
             return true;
 
         //vertical
@@ -88,7 +88,7 @@ public class Board {
         }
 
         //System.out.print("\nexit 4th while loop\n");
-        if(count == 4)
+        if(count >= 4)
             return true;
         
         //positive diagonal
@@ -110,7 +110,7 @@ public class Board {
             i--;
             j--;
         }
-        if(count == 4)
+        if(count >= 4)
             return true;
         
         //negative diagonal
@@ -132,7 +132,7 @@ public class Board {
             j++;
         }
         //System.out.print("\n\nmade it through the whole method  !!!!!!!!!!\n");
-        if(count == 4)
+        if(count >= 4)
             return true;
         return false;
 

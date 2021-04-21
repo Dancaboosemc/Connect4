@@ -105,7 +105,7 @@ public class GameGUI extends JFrame {
         load.addActionListener(new LoadActionListener());
         save.addActionListener(new SaveActionListener());
 
-        
+
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setVisible(true);
     }
@@ -136,9 +136,9 @@ public class GameGUI extends JFrame {
             restart.setVisible(true);
             winner.setVisible(true);
         }
-     }
+    }
 
-     class VsEzAiActionListener implements ActionListener{
+    class VsEzAiActionListener implements ActionListener{
         public void actionPerformed(ActionEvent e) {
             startB.setVisible(false);
             aiEzB.setVisible(false);
@@ -163,9 +163,9 @@ public class GameGUI extends JFrame {
             restart.setVisible(true);
             winner.setVisible(true);
         }
-     }
+    }
 
-     class VsNrAiActionListener implements ActionListener{
+    class VsNrAiActionListener implements ActionListener{
         public void actionPerformed(ActionEvent e) {
             startB.setVisible(false);
             aiEzB.setVisible(false);
@@ -191,9 +191,9 @@ public class GameGUI extends JFrame {
             restart.setVisible(true);
             winner.setVisible(true);
         }
-     }
+    }
 
-     class RestartActionListener implements ActionListener{
+    class RestartActionListener implements ActionListener{
         public void actionPerformed(ActionEvent e) {
             column1.setVisible(false);
             column2.setVisible(false);
@@ -218,17 +218,17 @@ public class GameGUI extends JFrame {
             for(int i = 0; i < 8 ; i++){
                 clicks[i] = 0;
                 for(int j = 0; j < 8 ; j++){
-                    
+
                     space[i][j].setVisible(false);
                     space[i][j].setIcon(new ImageIcon("blankspace.png"));
                 }
             }
         }
-     }
+    }
 
     class Column1ActionListener implements ActionListener{
-         public void actionPerformed(ActionEvent e) {
-            if(playerTurn == 1){
+        public void actionPerformed(ActionEvent e) {
+            /*if(playerTurn == 1){
                 space[7-clicks[0]][0].setIcon(new ImageIcon("blackpiece.png"));
                 winner.setText("Player 2's Turn");
             }
@@ -237,7 +237,7 @@ public class GameGUI extends JFrame {
                 winner.setText("Player 1's Turn");
             }
 
-            clicks[0]++;
+            //clicks[0]++;*/
             if (clicks[0] >= 8)
                 column1.setVisible(false);
 
@@ -246,7 +246,7 @@ public class GameGUI extends JFrame {
 
     class Column2ActionListener implements ActionListener{
         public void actionPerformed(ActionEvent e) {
-            if(playerTurn == 1){
+            /*if(playerTurn == 1){
                 space[7-clicks[1]][1].setIcon(new ImageIcon("blackpiece.png"));
                 winner.setText("Player 2's Turn");
             }
@@ -254,16 +254,16 @@ public class GameGUI extends JFrame {
                 space[7-clicks[1]][1].setIcon(new ImageIcon("redpiece.png"));
                 winner.setText("Player 1's Turn");
             }
-            clicks[1]++;
+            //clicks[1]++;*/
             if (clicks[1] >= 8)
-               column2.setVisible(false);
+                column2.setVisible(false);
 
-       }
-   }
-   
-   class Column3ActionListener implements ActionListener{
+        }
+    }
+
+    class Column3ActionListener implements ActionListener{
         public void actionPerformed(ActionEvent e) {
-            if(playerTurn == 1){
+            /*if(playerTurn == 1){
                 space[7-clicks[2]][2].setIcon(new ImageIcon("blackpiece.png"));
                 winner.setText("Player 2's Turn");
             }
@@ -271,7 +271,7 @@ public class GameGUI extends JFrame {
                 space[7-clicks[2]][2].setIcon(new ImageIcon("redpiece.png"));
                 winner.setText("Player 1's Turn");
             }
-            clicks[2]++;
+            //clicks[2]++;*/
             if (clicks[2] >= 8)
                 column3.setVisible(false);
 
@@ -280,7 +280,7 @@ public class GameGUI extends JFrame {
 
     class Column4ActionListener implements ActionListener{
         public void actionPerformed(ActionEvent e) {
-            if(playerTurn == 1){
+           /* if(playerTurn == 1){
                 space[7-clicks[3]][3].setIcon(new ImageIcon("blackpiece.png"));
                 winner.setText("Player 2's Turn");
             }
@@ -288,16 +288,16 @@ public class GameGUI extends JFrame {
                 space[7-clicks[3]][3].setIcon(new ImageIcon("redpiece.png"));
                 winner.setText("Player 1's Turn");
             }
-            clicks[3]++;
+            //clicks[3]++;*/
             if (clicks[3] >= 8)
-               column4.setVisible(false);
+                column4.setVisible(false);
 
-       }
-   }
-   
-   class Column5ActionListener implements ActionListener{
+        }
+    }
+
+    class Column5ActionListener implements ActionListener{
         public void actionPerformed(ActionEvent e) {
-            if(playerTurn == 1){
+           /* if(playerTurn == 1){
                 space[7-clicks[4]][4].setIcon(new ImageIcon("blackpiece.png"));
                 winner.setText("Player 2's Turn");
             }
@@ -305,16 +305,16 @@ public class GameGUI extends JFrame {
                 space[7-clicks[4]][4].setIcon(new ImageIcon("redpiece.png"));
                 winner.setText("Player 1's Turn");
             }
-            clicks[4]++;
+            //clicks[4]++;*/
             if (clicks[4] >= 8)
                 column5.setVisible(false);
 
         }
     }
-    
+
     class Column6ActionListener implements ActionListener{
         public void actionPerformed(ActionEvent e) {
-            if(playerTurn == 1){
+            /*if(playerTurn == 1){
                 space[7-clicks[5]][5].setIcon(new ImageIcon("blackpiece.png"));
                 winner.setText("Player 2's Turn");
             }
@@ -322,16 +322,16 @@ public class GameGUI extends JFrame {
                 space[7-clicks[5]][5].setIcon(new ImageIcon("redpiece.png"));
                 winner.setText("Player 1's Turn");
             }
-            clicks[5]++;
+            //clicks[5]++;*/
             if (clicks[5] >= 8)
-               column6.setVisible(false);
+                column6.setVisible(false);
 
-       }
-   }
-   
-   class Column7ActionListener implements ActionListener{
+        }
+    }
+
+    class Column7ActionListener implements ActionListener{
         public void actionPerformed(ActionEvent e) {
-            if(playerTurn == 1){
+            /*if(playerTurn == 1){
                 space[7-clicks[6]][6].setIcon(new ImageIcon("blackpiece.png"));
                 winner.setText("Player 2's Turn");
             }
@@ -339,16 +339,16 @@ public class GameGUI extends JFrame {
                 space[7-clicks[6]][6].setIcon(new ImageIcon("redpiece.png"));
                 winner.setText("Player 1's Turn");
             }
-            clicks[6]++;
+            //clicks[6]++;*/
             if (clicks[6] >= 8)
                 column7.setVisible(false);
 
         }
     }
-    
+
     class Column8ActionListener implements ActionListener{
         public void actionPerformed(ActionEvent e) {
-            if(playerTurn == 1){
+            /*if(playerTurn == 1){
                 space[7-clicks[7]][7].setIcon(new ImageIcon("blackpiece.png"));
                 winner.setText("Player 2's Turn");
             }
@@ -356,12 +356,12 @@ public class GameGUI extends JFrame {
                 space[7-clicks[7]][7].setIcon(new ImageIcon("redpiece.png"));
                 winner.setText("Player 1's Turn");
             }
-            clicks[7]++;
+            //clicks[7]++;*/
             if (clicks[7] >= 8)
-               column8.setVisible(false);
+                column8.setVisible(false);
 
-       }
-   }
+        }
+    }
 
     class LoadActionListener implements ActionListener{
         public void actionPerformed(ActionEvent e) {
@@ -374,7 +374,7 @@ public class GameGUI extends JFrame {
         }
     }
 
-   public void setPlayerTurn(int player){
+    public void setPlayerTurn(int player){
         playerTurn = player;
-   }
+    }
 }
