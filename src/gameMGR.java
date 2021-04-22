@@ -128,11 +128,11 @@ public class gameMGR {
         }
         if(plyrTrn() == 1) {
             gui.space[7 - gui.clicks[0]][0].setIcon(new ImageIcon("blackpiece.png"));
-            gui.winner.setText("Player 2's Turn");
+            gui.winner.setText("Player 1's Turn");
         }
         else {
             gui.space[7 - gui.clicks[0]][0].setIcon(new ImageIcon("redpiece.png"));
-            gui.winner.setText("Player 1's Turn");
+            gui.winner.setText("Player 2's Turn");
         }
         gui.clicks[0]++;
         showBoard(board.getBoard());
@@ -147,10 +147,14 @@ public class gameMGR {
                 won = true;
             }
         }
-        if(plyrTrn() == 1)
-            gui.space[7-gui.clicks[1]][1].setIcon(new ImageIcon("blackpiece.png"));
-        else
-            gui.space[7-gui.clicks[1]][1].setIcon(new ImageIcon("redpiece.png"));
+        if(plyrTrn() == 1) {
+            gui.space[7 - gui.clicks[1]][1].setIcon(new ImageIcon("blackpiece.png"));
+            gui.winner.setText("Player 1's Turn");
+        }
+        else {
+            gui.space[7 - gui.clicks[1]][1].setIcon(new ImageIcon("redpiece.png"));
+            gui.winner.setText("Player 2's Turn");
+        }
         gui.clicks[1]++;
         showBoard(board.getBoard());
         checkIfStale();
@@ -164,10 +168,14 @@ public class gameMGR {
                 won = true;
             }
         }
-        if(plyrTrn() == 1)
-            gui.space[7-gui.clicks[2]][2].setIcon(new ImageIcon("blackpiece.png"));
-        else
-            gui.space[7-gui.clicks[2]][2].setIcon(new ImageIcon("redpiece.png"));
+        if(plyrTrn() == 1) {
+            gui.space[7 - gui.clicks[2]][2].setIcon(new ImageIcon("blackpiece.png"));
+            gui.winner.setText("Player 1's Turn");
+        }
+        else {
+            gui.space[7 - gui.clicks[2]][2].setIcon(new ImageIcon("redpiece.png"));
+            gui.winner.setText("Player 2's Turn");
+        }
         gui.clicks[2]++;
         showBoard(board.getBoard());
         checkIfStale();
@@ -181,10 +189,14 @@ public class gameMGR {
                 won = true;
             }
         }
-        if(plyrTrn() == 1)
-            gui.space[7-gui.clicks[3]][3].setIcon(new ImageIcon("blackpiece.png"));
-        else
-            gui.space[7-gui.clicks[3]][3].setIcon(new ImageIcon("redpiece.png"));
+        if(plyrTrn() == 1) {
+            gui.space[7 - gui.clicks[3]][3].setIcon(new ImageIcon("blackpiece.png"));
+            gui.winner.setText("Player 1's Turn");
+        }
+        else {
+            gui.space[7 - gui.clicks[3]][3].setIcon(new ImageIcon("redpiece.png"));
+            gui.winner.setText("Player 2's Turn");
+        }
         gui.clicks[3]++;
         showBoard(board.getBoard());
         checkIfStale();
@@ -198,10 +210,14 @@ public class gameMGR {
                 won = true;
             }
         }
-        if(plyrTrn() == 1)
-            gui.space[7-gui.clicks[4]][4].setIcon(new ImageIcon("blackpiece.png"));
-        else
-            gui.space[7-gui.clicks[4]][4].setIcon(new ImageIcon("redpiece.png"));
+        if(plyrTrn() == 1) {
+            gui.space[7 - gui.clicks[4]][4].setIcon(new ImageIcon("blackpiece.png"));
+            gui.winner.setText("Player 1's Turn");
+        }
+        else {
+            gui.space[7 - gui.clicks[4]][4].setIcon(new ImageIcon("redpiece.png"));
+            gui.winner.setText("Player 2's Turn");
+        }
         gui.clicks[4]++;
         showBoard(board.getBoard());
         checkIfStale();
@@ -215,10 +231,14 @@ public class gameMGR {
                 won = true;
             }
         }
-        if(plyrTrn() == 1)
-            gui.space[7-gui.clicks[5]][5].setIcon(new ImageIcon("blackpiece.png"));
-        else
-            gui.space[7-gui.clicks[5]][5].setIcon(new ImageIcon("redpiece.png"));
+        if(plyrTrn() == 1) {
+            gui.space[7 - gui.clicks[5]][5].setIcon(new ImageIcon("blackpiece.png"));
+            gui.winner.setText("Player 1's Turn");
+        }
+        else {
+            gui.space[7 - gui.clicks[5]][5].setIcon(new ImageIcon("redpiece.png"));
+            gui.winner.setText("Player 2's Turn");
+        }
         gui.clicks[5]++;
         showBoard(board.getBoard());
         checkIfStale();
@@ -232,10 +252,14 @@ public class gameMGR {
                 won = true;
             }
         }
-        if(plyrTrn() == 1)
-            gui.space[7-gui.clicks[6]][6].setIcon(new ImageIcon("blackpiece.png"));
-        else
-            gui.space[7-gui.clicks[6]][6].setIcon(new ImageIcon("redpiece.png"));
+        if(plyrTrn() == 1) {
+            gui.space[7 - gui.clicks[6]][6].setIcon(new ImageIcon("blackpiece.png"));
+            gui.winner.setText("Player 1's Turn");
+        }
+        else {
+            gui.space[7 - gui.clicks[6]][6].setIcon(new ImageIcon("redpiece.png"));
+            gui.winner.setText("Player 2's Turn");
+        }
         gui.clicks[6]++;
         showBoard(board.getBoard());
         checkIfStale();
@@ -249,10 +273,14 @@ public class gameMGR {
                 won = true;
             }
         }
-        if(plyrTrn() == 1)
-            gui.space[7-gui.clicks[7]][7].setIcon(new ImageIcon("blackpiece.png"));
-        else
-            gui.space[7-gui.clicks[7]][7].setIcon(new ImageIcon("redpiece.png"));
+        if(plyrTrn() == 1) {
+            gui.space[7 - gui.clicks[7]][7].setIcon(new ImageIcon("blackpiece.png"));
+            gui.winner.setText("Player 1's Turn");
+        }
+        else {
+            gui.space[7 - gui.clicks[7]][7].setIcon(new ImageIcon("redpiece.png"));
+            gui.winner.setText("Player 2's Turn");
+        }
         gui.clicks[7]++;
         showBoard(board.getBoard());
         checkIfStale();
