@@ -37,7 +37,7 @@ public class GameGUI extends JFrame {
 
     int clicks[] = new int[]{0,0,0,0,0,0,0,0};
     JLabel[][] space = new JLabel[8][8];
-    //JLabel background;
+    JLabel background;
 
 
     public GameGUI(){
@@ -49,8 +49,8 @@ public class GameGUI extends JFrame {
         startP.setLayout(new GridLayout(1,4));
         columnBP.setLayout(new GridLayout(1,8));
         boardP.setBackground(Color.DARK_GRAY);
-        //background = new JLabel();
-        //background.setIcon(new ImageIcon("connectfour.png"));
+        background = new JLabel();
+        background.setIcon(new ImageIcon("connect4.png"));
         bottomP.setBackground(Color.DARK_GRAY);
         startP.add(startB);
         startP.add(aiEzB);
@@ -65,7 +65,7 @@ public class GameGUI extends JFrame {
         columnBP.add(column7);
         columnBP.add(column8);
 
-        //boardP.add(background);
+        boardP.add(background);
 
         for(int i = 0; i < 8 ; i++){
             for(int j = 0; j < 8 ; j++){
