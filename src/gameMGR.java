@@ -25,6 +25,15 @@ private Board board;
         gui.column6.addActionListener(e -> saveSxth());
         gui.column7.addActionListener(e -> saveSvnth());
         gui.column8.addActionListener(e -> saveEgth());
+        gui.save.addActionListener(e -> {
+            try {
+                saveGame(board, gui);
+            } catch (IOException e1) {
+                // TODO Auto-generated catch block
+                e1.printStackTrace();
+            }
+        });
+        gui.load.addActionListener(e -> loadBoardGUI());
         gui.restart.addActionListener(e -> startGame());
     }
 
@@ -95,6 +104,16 @@ private Board board;
         ois.close();
         fin.close();
         return loadedGUI;
+    }
+
+    public void loadBoardGUI(){
+        try{
+            gui = savedGUIIn();
+            board = savedBoardIn();
+            showBoard(board.getBoard());
+        } catch(Exception e){
+
+        }
     }
 
     /*

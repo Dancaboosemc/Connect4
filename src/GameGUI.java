@@ -3,8 +3,9 @@ import javax.swing.JPanel;
 import javax.swing.JButton;
 import java.awt.*;
 import java.awt.event.*;
+import java.io.Serializable;
 
-public class GameGUI extends JFrame {
+public class GameGUI extends JFrame implements Serializable{
 
     JPanel startP = new JPanel();
     JButton startB = new JButton("Start Game");
@@ -16,6 +17,8 @@ public class GameGUI extends JFrame {
     JButton column6 = new JButton("Column 6");
     JButton column7 = new JButton("Column 7");
     JButton column8 = new JButton("Column 8");
+    JButton save = new JButton("Save Game");
+    JButton load = new JButton("Load Game");
     JButton restart = new JButton("Restart");
     int clicks[] = new int[]{0,0,0,0,0,0,0,0};
 
@@ -38,6 +41,8 @@ public class GameGUI extends JFrame {
         startP.add(column6);
         startP.add(column7);
         startP.add(column8);
+        startP.add(save);
+        startP.add(load);
         startP.add(restart);
         column1.setVisible(false);
         column2.setVisible(false);
@@ -47,6 +52,8 @@ public class GameGUI extends JFrame {
         column6.setVisible(false);
         column7.setVisible(false);
         column8.setVisible(false);
+        save.setVisible(false);
+        load.setVisible(false);
         restart.setVisible(false);
         add(startP);
         startB.addActionListener(new StartActionListener());
@@ -59,6 +66,8 @@ public class GameGUI extends JFrame {
         column6.addActionListener(new Column6ActionListener());
         column7.addActionListener(new Column7ActionListener());
         column8.addActionListener(new Column8ActionListener());
+        save.addActionListener(new SaveGameActionListener());
+        load.addActionListener(new LoadGameActionListener());
 
         
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -76,11 +85,13 @@ public class GameGUI extends JFrame {
             column6.setVisible(true);
             column7.setVisible(true);
             column8.setVisible(true);
+            save.setVisible(true);
+            load.setVisible(true);
             restart.setVisible(true);
         }
-     }
+    }
 
-     class RestartActionListener implements ActionListener{
+    class RestartActionListener implements ActionListener{
         public void actionPerformed(ActionEvent e) {
             startB.setVisible(true);
             column1.setVisible(false);
@@ -91,15 +102,17 @@ public class GameGUI extends JFrame {
             column6.setVisible(false);
             column7.setVisible(false);
             column8.setVisible(false);
+            save.setVisible(false);
+            load.setVisible(true);
             restart.setVisible(false);
             for(int i = 0; i < 8; i++){
                 clicks[i] = 0;
             }
         }
-     }
+    }
 
     class Column1ActionListener implements ActionListener{
-         public void actionPerformed(ActionEvent e) {
+        public void actionPerformed(ActionEvent e) {
             clicks[0]++;
             if (clicks[0] >= 8)
                 column1.setVisible(false);
@@ -109,14 +122,14 @@ public class GameGUI extends JFrame {
 
     class Column2ActionListener implements ActionListener{
         public void actionPerformed(ActionEvent e) {
-           clicks[1]++;
-           if (clicks[1] >= 8)
-               column2.setVisible(false);
+            clicks[1]++;
+            if (clicks[1] >= 8)
+                column2.setVisible(false);
 
-       }
-   }
-   
-   class Column3ActionListener implements ActionListener{
+        }
+    }
+
+    class Column3ActionListener implements ActionListener{
         public void actionPerformed(ActionEvent e) {
         clicks[2]++;
             if (clicks[2] >= 8)
@@ -127,14 +140,14 @@ public class GameGUI extends JFrame {
 
     class Column4ActionListener implements ActionListener{
         public void actionPerformed(ActionEvent e) {
-           clicks[3]++;
-           if (clicks[3] >= 8)
-               column4.setVisible(false);
+            clicks[3]++;
+            if (clicks[3] >= 8)
+                column4.setVisible(false);
 
-       }
-   }
-   
-   class Column5ActionListener implements ActionListener{
+        }
+    }
+
+    class Column5ActionListener implements ActionListener{
         public void actionPerformed(ActionEvent e) {
             clicks[4]++;
             if (clicks[4] >= 8)
@@ -145,14 +158,14 @@ public class GameGUI extends JFrame {
     
     class Column6ActionListener implements ActionListener{
         public void actionPerformed(ActionEvent e) {
-           clicks[5]++;
-           if (clicks[5] >= 8)
-               column6.setVisible(false);
+            clicks[5]++;
+            if (clicks[5] >= 8)
+                column6.setVisible(false);
 
-       }
-   }
-   
-   class Column7ActionListener implements ActionListener{
+        }
+    }
+
+    class Column7ActionListener implements ActionListener{
         public void actionPerformed(ActionEvent e) {
             clicks[6]++;
             if (clicks[6] >= 8)
@@ -163,10 +176,22 @@ public class GameGUI extends JFrame {
     
     class Column8ActionListener implements ActionListener{
         public void actionPerformed(ActionEvent e) {
-           clicks[7]++;
-           if (clicks[7] >= 8)
-               column8.setVisible(false);
+            clicks[7]++;
+            if (clicks[7] >= 8)
+                column8.setVisible(false);
 
-       }
-   }
+        }
+    }
+
+    class SaveGameActionListener implements ActionListener{
+        public void actionPerformed(ActionEvent e){
+
+        }    
+    }
+
+    class LoadGameActionListener implements ActionListener{
+        public void actionPerformed(ActionEvent e){
+
+        }    
+    }
 }

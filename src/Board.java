@@ -1,4 +1,6 @@
-public class Board {
+import java.io.Serializable;
+
+public class Board implements Serializable{
     final int boardWidth = 8;
     final int boardHeight = 8;
 
@@ -42,6 +44,10 @@ public class Board {
 
     public void setBoard(int [][] brd) {
         b = brd;
+    }
+
+    public int getTotalMoves(){
+        return totalMoves;
     }
 
     public boolean isWin(int c, int r){
