@@ -215,6 +215,10 @@ public class GameGUI extends JFrame {
             winner.setVisible(false);
             winner.setText("Player 1's Turn");
 
+            ////////////////////////////////////////////////////////////////////////////////////
+            background.setVisible(true);
+            ////////////////////////////////////////////////////////////////////////////////////
+
             for(int i = 0; i < 8 ; i++){
                 clicks[i] = 0;
                 for(int j = 0; j < 8 ; j++){
