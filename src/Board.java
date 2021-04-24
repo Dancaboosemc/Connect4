@@ -1,10 +1,14 @@
-public class Board {
+import java.io.Serializable;
+
+public class Board implements Serializable{
     final int boardWidth = 8;
     final int boardHeight = 8;
 
     int totalMoves;
 
     int[][] b;
+
+    int savedGamemode = 0;
 
     public Board(){
         b = new int[boardWidth][boardHeight];
@@ -27,6 +31,14 @@ public class Board {
 
     public int getChosenR(){
         return r;
+    }
+
+    public void setSavedGM(int gm){
+        savedGamemode = gm;
+    }
+
+    public int getSavedGM(){
+        return savedGamemode;
     }
 
     public boolean addToColumn(int c, int playerNum){

@@ -1,6 +1,13 @@
 
 import javax.swing.*;
 import java.util.Random;
+import java.io.IOException;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileInputStream;
+import java.io.ObjectOutputStream;
+import java.io.ObjectInputStream;
+
 public class gameMGR {
     private GameGUI gui;
     private Board board;
@@ -31,24 +38,31 @@ public class gameMGR {
         gui.column7.addActionListener(e -> saveSvnth());
         gui.column8.addActionListener(e -> saveEgth());
         gui.restart.addActionListener(e -> startGame());
-        //gui.load.addActionListener(e -> loadGame());
+        gui.save.addActionListener(e -> {
+            try{
+                saveGame(board, gui);
+            } catch(IOException er){
+                er.printStackTrace();
+            }
+        });
+        gui.load.addActionListener(e -> loadGame());
 
     }
 
     /*
     singlePlayer() sets the easy ai mode single player
      */
-    public void singlePlayer() { setCPU(true); setCPUNrml(false); }
+    public void singlePlayer() { setCPU(true); setCPUNrml(false); board.setSavedGM(1); }
 
     /*
     singlePlayerNormal() sets the normal ai mode single player
      */
-    public void singlePlayerNormal() { setCPU(false); setCPUNrml(true); }
+    public void singlePlayerNormal() { setCPU(false); setCPUNrml(true); board.setSavedGM(2); }
 
     /*
     mltPlayer() sets the game for 2 players
      */
-    public void mltPlayer() { setCPU(false); setCPUNrml(false); }
+    public void mltPlayer() { setCPU(false); setCPUNrml(false); board.setSavedGM(0); }
 
     public void setCPU(boolean ai) { cpu = ai; }
 
@@ -87,6 +101,93 @@ public class gameMGR {
         board.setBoard(brd);
         showBoard(board.getBoard());
         board.totalMoves = 0;
+    }
+
+    /*
+    saveGame():
+    -Saves board in board.txt
+    -Saves gui in gui.txt
+    */
+    public static void saveGame(Board b, GameGUI g)throws IOException{
+        String gfn = "gui.txt";
+        String bfn = "board.txt";
+
+        FileOutputStream fos = new FileOutputStream(gfn);
+        ObjectOutputStream oos = new ObjectOutputStream(fos);
+
+        oos.writeObject(g);
+        oos.close();
+        fos.close();
+
+        fos = new FileOutputStream(bfn);
+        oos = new ObjectOutputStream(fos);
+
+        oos.writeObject(b);
+        oos.close();
+        fos.close();
+    }
+
+    /*
+    savedGUIIn():
+    -returns the previously saved gui
+    */
+    public static GameGUI savedGUIIn()throws FileNotFoundException, IOException, ClassNotFoundException{
+        String gfn = "gui.txt";
+        FileInputStream fin = new FileInputStream(gfn);
+        ObjectInputStream ois = new ObjectInputStream(fin);
+        GameGUI loadedGUI = (GameGUI)ois.readObject();
+        ois.close();
+        fin.close();
+        return loadedGUI;
+    }
+
+    /*
+    savedBoardIn():
+    -returns the previously saved board
+    */
+    public static Board savedBoardIn()throws FileNotFoundException, IOException, ClassNotFoundException{
+        String bfn = "board.txt";
+        FileInputStream fin = new FileInputStream(bfn);
+        ObjectInputStream ois = new ObjectInputStream(fin);
+        Board loadedBoard = (Board)ois.readObject();
+        ois.close();
+        fin.close();
+        return loadedBoard;
+    }
+
+    /*
+    loadGame():
+    -starts a game that was saved previously
+    */
+    public void loadGame(){
+        try{
+            gui = savedGUIIn();
+            board = savedBoardIn();
+
+            won = false;
+            gui.background.setVisible(false);
+            showBoard(board.getBoard());
+            //clickchecker loop to disable buttons for full columns
+            for(int i = 0; i < 8; i++){
+                clickChecker(i);
+            }
+            switch(board.getSavedGM()){
+                case 0 :{
+                    mltPlayer();
+                    break;
+                }
+                case 1 :{
+                    singlePlayer();
+                    break;
+                }
+                case 2 :{
+                    singlePlayerNormal();
+                    break;
+                }
+            }
+        } catch(Exception e){
+            e.printStackTrace();
+        }
     }
 
     /*

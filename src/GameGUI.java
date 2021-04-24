@@ -6,10 +6,9 @@ import javax.swing.ImageIcon;
 import javax.swing.JTextField;
 import java.awt.*;
 import java.awt.event.*;
+import java.io.Serializable;
 
-
-
-public class GameGUI extends JFrame {
+public class GameGUI extends JFrame implements Serializable{
 
     int playerTurn = 0;
     JPanel startP = new JPanel();
@@ -369,7 +368,29 @@ public class GameGUI extends JFrame {
 
     class LoadActionListener implements ActionListener{
         public void actionPerformed(ActionEvent e) {
+            startB.setVisible(false);
+            aiEzB.setVisible(false);
+            aiNrB.setVisible(false);
+            load.setVisible(false);
+            remove(startP);
+            add(columnBP, BorderLayout.NORTH);
+            column1.setVisible(true);
+            column2.setVisible(true);
+            column3.setVisible(true);
+            column4.setVisible(true);
+            column5.setVisible(true);
+            column6.setVisible(true);
+            column7.setVisible(true);
+            column8.setVisible(true);
 
+            for(int i = 0; i < 8 ; i++){
+                for(int j = 0; j < 8 ; j++){
+                    space[i][j].setVisible(true);
+                }
+            }
+            save.setVisible(true);
+            restart.setVisible(true);
+            winner.setVisible(true);
         }
     }
     class SaveActionListener implements ActionListener{
