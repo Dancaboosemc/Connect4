@@ -31,7 +31,7 @@ public class gameMGR {
         gui.column7.addActionListener(e -> saveSvnth());
         gui.column8.addActionListener(e -> saveEgth());
         gui.restart.addActionListener(e -> startGame());
-
+        //gui.load.addActionListener(e -> loadGame());
 
     }
 
