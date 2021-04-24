@@ -6,9 +6,8 @@ import javax.swing.ImageIcon;
 import javax.swing.JTextField;
 import java.awt.*;
 import java.awt.event.*;
-import java.io.Serializable;
 
-public class GameGUI extends JFrame implements Serializable{
+public class GameGUI extends JFrame{
 
     int playerTurn = 0;
     JPanel startP = new JPanel();
@@ -134,6 +133,7 @@ public class GameGUI extends JFrame implements Serializable{
             save.setVisible(true);
             restart.setVisible(true);
             winner.setVisible(true);
+            background.setVisible(false);
         }
     }
 
@@ -161,6 +161,7 @@ public class GameGUI extends JFrame implements Serializable{
             save.setVisible(true);
             restart.setVisible(true);
             winner.setVisible(true);
+            background.setVisible(false);
         }
     }
 
@@ -189,6 +190,7 @@ public class GameGUI extends JFrame implements Serializable{
             save.setVisible(true);
             restart.setVisible(true);
             winner.setVisible(true);
+            background.setVisible(false);
         }
     }
 
@@ -368,20 +370,37 @@ public class GameGUI extends JFrame implements Serializable{
 
     class LoadActionListener implements ActionListener{
         public void actionPerformed(ActionEvent e) {
+            background.setVisible(false);
             startB.setVisible(false);
             aiEzB.setVisible(false);
             aiNrB.setVisible(false);
             load.setVisible(false);
             remove(startP);
             add(columnBP, BorderLayout.NORTH);
-            column1.setVisible(true);
-            column2.setVisible(true);
-            column3.setVisible(true);
-            column4.setVisible(true);
-            column5.setVisible(true);
-            column6.setVisible(true);
-            column7.setVisible(true);
-            column8.setVisible(true);
+            if(clicks[0] < 8){
+                column1.setVisible(true);
+            }
+            if(clicks[1] < 8){
+                column2.setVisible(true);
+            }
+            if(clicks[2] < 8){
+                column3.setVisible(true);
+            }
+            if(clicks[3] < 8){
+                column4.setVisible(true);
+            }
+            if(clicks[4] < 8){
+                column5.setVisible(true);
+            }
+            if(clicks[5] < 8){
+                column6.setVisible(true);
+            }
+            if(clicks[6] < 8){
+                column7.setVisible(true);
+            }
+            if(clicks[7] < 8){
+                column8.setVisible(true);
+            }
 
             for(int i = 0; i < 8 ; i++){
                 for(int j = 0; j < 8 ; j++){
@@ -401,6 +420,12 @@ public class GameGUI extends JFrame implements Serializable{
 
     public void setPlayerTurn(int player){
         playerTurn = player;
+        //winner.setText("Player " + playerTurn + "'s Turn");
     }
     
+    public void setClicks(int[] c){
+        for(int i = 0; i < 8; i++){
+            clicks[i] = c[i];
+        }
+    }
 }

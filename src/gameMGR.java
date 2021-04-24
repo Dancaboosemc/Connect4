@@ -40,7 +40,8 @@ public class gameMGR {
         gui.restart.addActionListener(e -> startGame());
         gui.save.addActionListener(e -> {
             try{
-                saveGame(board, gui);
+                board.setBoardClicks(gui.clicks);
+                saveGame(board);
             } catch(IOException er){
                 er.printStackTrace();
             }
@@ -91,7 +92,7 @@ public class gameMGR {
             }
         }
 
-        gui.background.setVisible(false);
+        //gui.background.setVisible(false);
 
         /*for(int j = 0; j < 2; j++){                       /////////////////////////////////////////////////
             for(int x = 0; x < 8; x++){
@@ -101,44 +102,22 @@ public class gameMGR {
         board.setBoard(brd);
         showBoard(board.getBoard());
         board.totalMoves = 0;
+        gui.save.setEnabled(true);
     }
 
     /*
     saveGame():
     -Saves board in board.txt
-    -Saves gui in gui.txt
     */
-    public static void saveGame(Board b, GameGUI g)throws IOException{
-        String gfn = "gui.txt";
+    public static void saveGame(Board b)throws IOException{
         String bfn = "board.txt";
 
-        FileOutputStream fos = new FileOutputStream(gfn);
+        FileOutputStream fos = new FileOutputStream(bfn);
         ObjectOutputStream oos = new ObjectOutputStream(fos);
-
-        oos.writeObject(g);
-        oos.close();
-        fos.close();
-
-        fos = new FileOutputStream(bfn);
-        oos = new ObjectOutputStream(fos);
 
         oos.writeObject(b);
         oos.close();
         fos.close();
-    }
-
-    /*
-    savedGUIIn():
-    -returns the previously saved gui
-    */
-    public static GameGUI savedGUIIn()throws FileNotFoundException, IOException, ClassNotFoundException{
-        String gfn = "gui.txt";
-        FileInputStream fin = new FileInputStream(gfn);
-        ObjectInputStream ois = new ObjectInputStream(fin);
-        GameGUI loadedGUI = (GameGUI)ois.readObject();
-        ois.close();
-        fin.close();
-        return loadedGUI;
     }
 
     /*
@@ -152,6 +131,7 @@ public class gameMGR {
         Board loadedBoard = (Board)ois.readObject();
         ois.close();
         fin.close();
+
         return loadedBoard;
     }
 
@@ -161,27 +141,52 @@ public class gameMGR {
     */
     public void loadGame(){
         try{
-            gui = savedGUIIn();
             board = savedBoardIn();
+            gui.setClicks(board.blicks);
+            gui.setPlayerTurn(board.getPlayerTurn());
+            gui.save.setEnabled(true);
 
             won = false;
-            gui.background.setVisible(false);
+            
             showBoard(board.getBoard());
-            //clickchecker loop to disable buttons for full columns
+            System.out.println("total moves: " + board.totalMoves);
+            System.out.println("player turn: " + board.getPlayerTurn());
+            System.out.println("clicks: ");
+            for(int i =0; i < 8; i++){
+                System.out.print(gui.clicks[i] +", ");
+            }
+            System.out.println();
+            for(int c = 0; c < 8; c++){
+                for(int i = 0; i < board.blicks[c]; i++){
+                    
+                    if(board.b[c][i] == 1){
+                        //System.out.println("board at " + c + ", " + i + ": " + board.b[c][i]);
+                        gui.space[7 - i][c].setIcon(new ImageIcon("redpiece.png"));
+                    } else if(board.b[c][i] == 2){
+                        //System.out.println("board at " + c + ", " + i + ": " + board.b[c][i]);
+                        gui.space[7 - i][c].setIcon(new ImageIcon("blackpiece.png"));
+                    }
+                }
+            }
+
             for(int i = 0; i < 8; i++){
                 clickChecker(i);
             }
+            
             switch(board.getSavedGM()){
                 case 0 :{
                     mltPlayer();
+                    //System.out.println("2 player");
                     break;
                 }
                 case 1 :{
                     singlePlayer();
+                    //System.out.println("ez ai");
                     break;
                 }
                 case 2 :{
                     singlePlayerNormal();
+                    //System.out.println("normal ai");
                     break;
                 }
             }
@@ -482,6 +487,7 @@ public class gameMGR {
             System.out.print("Player 2 Wins");
         }
         resetButtons();
+        gui.save.setEnabled(false);
     }
 
 
@@ -508,6 +514,8 @@ public class gameMGR {
     public void checkIfStale() {
         if (board.isFull()) {
             System.out.print("\nGame is at a stalemate\n");
+            gui.winner.setText("StaleMate!");
+            gui.save.setEnabled(false);
         }
     }
 
@@ -628,22 +636,27 @@ public class gameMGR {
             case 3 :{
                 if(gui.clicks[3] == 8)
                     gui.column4.setVisible(false);
+                break;
             }
             case 4 :{
                 if(gui.clicks[4] == 8)
                     gui.column5.setVisible(false);
+                break;
             }
             case 5 :{
                 if(gui.clicks[5] == 8)
                     gui.column6.setVisible(false);
+                break;
             }
             case 6 :{
                 if(gui.clicks[6] == 8)
                     gui.column7.setVisible(false);
+                break;
             }
             case 7 :{
                 if(gui.clicks[7] == 8)
                     gui.column8.setVisible(false);
+                break;
             }
         }
     }

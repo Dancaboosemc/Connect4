@@ -7,6 +7,7 @@ public class Board implements Serializable{
     int totalMoves;
 
     int[][] b;
+    int blicks[] = new int[]{0,0,0,0,0,0,0,0};
 
     int savedGamemode = 0;
 
@@ -39,6 +40,16 @@ public class Board implements Serializable{
 
     public int getSavedGM(){
         return savedGamemode;
+    }
+
+    public int getPlayerTurn(){
+        return (totalMoves % 2)+1;
+    }
+
+    public void setBoardClicks(int[] g){
+        for(int i = 0; i < 8; i++){
+            blicks[i] = g[i];
+        }
     }
 
     public boolean addToColumn(int c, int playerNum){
