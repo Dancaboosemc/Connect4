@@ -70,6 +70,7 @@ public class gameMGR {
      */
     public void startGame() {
         int[][] brd = board.getBoard();
+        won = false;
         for (int i = 0; i < board.boardHeight; i++) {
             for (int y = 0; y < board.boardWidth; y++) {
                 brd[i][y] = 0;
@@ -143,6 +144,12 @@ public class gameMGR {
             gui.space[7 - gui.clicks[0]][0].setIcon(new ImageIcon("redpiece.png"));
             gui.winner.setText("Player 2's Turn");
         }
+        if(won && gui.playerTurn == 1){
+            gui.winner.setText("Player 2 Won");
+        }
+        if(won && gui.playerTurn == 2){
+            gui.winner.setText("Player 1 Won");
+        }
         setSaver(0);
         gui.clicks[0]++;
         showBoard(board.getBoard());
@@ -164,6 +171,12 @@ public class gameMGR {
         else {
             gui.space[7 - gui.clicks[1]][1].setIcon(new ImageIcon("redpiece.png"));
             gui.winner.setText("Player 2's Turn");
+        }
+        if(won && gui.playerTurn == 1){
+            gui.winner.setText("Player 2 Won");
+        }
+        if(won && gui.playerTurn == 2){
+            gui.winner.setText("Player 1 Won");
         }
         setSaver(1);
         gui.clicks[1]++;
@@ -187,6 +200,12 @@ public class gameMGR {
             gui.space[7 - gui.clicks[2]][2].setIcon(new ImageIcon("redpiece.png"));
             gui.winner.setText("Player 2's Turn");
         }
+        if(won && gui.playerTurn == 1){
+            gui.winner.setText("Player 2 Won");
+        }
+        if(won && gui.playerTurn == 2){
+            gui.winner.setText("Player 1 Won");
+        }
         setSaver(2);
         gui.clicks[2]++;
         showBoard(board.getBoard());
@@ -208,6 +227,12 @@ public class gameMGR {
         else {
             gui.space[7 - gui.clicks[3]][3].setIcon(new ImageIcon("redpiece.png"));
             gui.winner.setText("Player 2's Turn");
+        }
+        if(won && gui.playerTurn == 1){
+            gui.winner.setText("Player 2 Won");
+        }
+        if(won && gui.playerTurn == 2){
+            gui.winner.setText("Player 1 Won");
         }
         setSaver(3);
         gui.clicks[3]++;
@@ -231,6 +256,12 @@ public class gameMGR {
             gui.space[7 - gui.clicks[4]][4].setIcon(new ImageIcon("redpiece.png"));
             gui.winner.setText("Player 2's Turn");
         }
+        if(won && gui.playerTurn == 1){
+            gui.winner.setText("Player 2 Won");
+        }
+        if(won && gui.playerTurn == 2){
+            gui.winner.setText("Player 1 Won");
+        }
         setSaver(4);
         gui.clicks[4]++;
         showBoard(board.getBoard());
@@ -252,6 +283,12 @@ public class gameMGR {
         else {
             gui.space[7 - gui.clicks[5]][5].setIcon(new ImageIcon("redpiece.png"));
             gui.winner.setText("Player 2's Turn");
+        }
+        if(won && gui.playerTurn == 1){
+            gui.winner.setText("Player 2 Won");
+        }
+        if(won && gui.playerTurn == 2){
+            gui.winner.setText("Player 1 Won");
         }
         setSaver(5);
         gui.clicks[5]++;
@@ -275,6 +312,12 @@ public class gameMGR {
             gui.space[7 - gui.clicks[6]][6].setIcon(new ImageIcon("redpiece.png"));
             gui.winner.setText("Player 2's Turn");
         }
+        if(won && gui.playerTurn == 1){
+            gui.winner.setText("Player 2 Won");
+        }
+        if(won && gui.playerTurn == 2){
+            gui.winner.setText("Player 1 Won");
+        }
         setSaver(6);
         gui.clicks[6]++;
         showBoard(board.getBoard());
@@ -296,6 +339,12 @@ public class gameMGR {
         else {
             gui.space[7 - gui.clicks[7]][7].setIcon(new ImageIcon("redpiece.png"));
             gui.winner.setText("Player 2's Turn");
+        }
+        if(won && gui.playerTurn == 1){
+            gui.winner.setText("Player 2 Won");
+        }
+        if(won && gui.playerTurn == 2){
+            gui.winner.setText("Player 1 Won");
         }
         setSaver(7);
         gui.clicks[7]++;
@@ -339,6 +388,7 @@ public class gameMGR {
     hides column buttons
      */
     public void resetButtons() {
+        won = false;
         gui.column1.setVisible(false);
         gui.column2.setVisible(false);
         gui.column3.setVisible(false);

@@ -381,4 +381,5 @@ public class GameGUI extends JFrame {
     public void setPlayerTurn(int player){
         playerTurn = player;
     }
+    
 }
