@@ -479,12 +479,12 @@ public class gameMGR {
     public void winner(){
         System.out.print("winner");
         if(plyrTrn() != 1) {
-            gui.winner.setText("Player 1 Wins");
-            System.out.print("Player 1 Wins");
+            gui.winner.setText("Player 1 Won");
+            System.out.print("Player 1 Won");
         }
         else {
-            gui.winner.setText("Player 2 Wins");
-            System.out.print("Player 2 Wins");
+            gui.winner.setText("Player 2 Won");
+            System.out.print("Player 2 Won");
         }
         resetButtons();
         gui.save.setEnabled(false);
@@ -554,6 +554,7 @@ public class gameMGR {
                 if(board.isColumnPlayable(aiMove)){
                     if(board.addToColumn(aiMove, plyrTrn())){
                         winner();
+                        //won = true;
                     }
                     
                     if(plyrTrn() == 1)
@@ -565,7 +566,6 @@ public class gameMGR {
                     clickChecker(aiMove);
                     checkIfStale();
                     play = true;
-
                 }
             }
         }
@@ -575,6 +575,7 @@ public class gameMGR {
             if(board.isColumnPlayable(getSaver()))
                     if(board.addToColumn(getSaver(), plyrTrn()))
                         winner();
+                        //won = true;
             if(plyrTrn() == 1)
                 gui.space[7-gui.clicks[getSaver()]][getSaver()].setIcon(new ImageIcon("blackpiece.png"));
             else
@@ -583,7 +584,14 @@ public class gameMGR {
             showBoard(board.getBoard());
             clickChecker(getSaver());
             checkIfStale();
+            
 
+        }
+        if(!board.isWin(board.getChosenC(), board.getChosenR())){
+            gui.winner.setText("Player 1's Turn");
+
+        } else {
+            gui.winner.setText("Player 2 Won");
         }
     }
 
