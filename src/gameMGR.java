@@ -94,11 +94,11 @@ public class gameMGR {
 
         //gui.background.setVisible(false);
 
-        /*for(int j = 0; j < 2; j++){                       /////////////////////////////////////////////////
+        /*for(int j = 0; j < 2; j++){     
             for(int x = 0; x < 8; x++){
-                brd[x][j] = 3;                             ////////////////////////////////////////////////
+                brd[x][j] = 3;   
             }
-        }*/                                                   ///////////////////////////////////////////
+        }*/ 
         board.setBoard(brd);
         showBoard(board.getBoard());
         board.totalMoves = 0;
@@ -241,7 +241,7 @@ public class gameMGR {
                 won = true;
             }
         }
-        System.out.print("Player Turn : " + plyrTrn());/////////////////////////////////////////////////////////
+        System.out.print("Player Turn : " + plyrTrn());
         if(plyrTrn() == 1) {
             gui.space[7 - gui.clicks[0]][0].setIcon(new ImageIcon("blackpiece.png"));
             gui.winner.setText("Player 1's Turn");
@@ -504,8 +504,7 @@ public class gameMGR {
         gui.column6.setVisible(false);
         gui.column7.setVisible(false);
         gui.column8.setVisible(false);
-        //gui.aiEzB.setVisible(false);////////???????????????????/////////////////////////////
-        //////////////////////////////////////////////////////////////gui.background.setVisible(true);
+        
     }
 
     /*
@@ -556,16 +555,12 @@ public class gameMGR {
                     if(board.addToColumn(aiMove, plyrTrn())){
                         winner();
                     }
-                    //clickChecker(aiMove);/////////////////////////////////////////////////////
-                    //System.out.print(gui.playerTurn);//////////////////////////////////////////
-                    //gui.clicks[aiMove]++;
-                    //clickChecker(aiMove);////////////////////////////////////////////////////////
+                    
                     if(plyrTrn() == 1)
                         gui.space[7-gui.clicks[aiMove]][aiMove].setIcon(new ImageIcon("blackpiece.png"));
                     else
                         gui.space[7-gui.clicks[aiMove]][aiMove].setIcon(new ImageIcon("redpiece.png"));
                     gui.clicks[aiMove]++;
-                    //gui.clicks[aiMove]++;///////////////////////////////////////////////////////////
                     showBoard(board.getBoard());
                     clickChecker(aiMove);
                     checkIfStale();
@@ -585,28 +580,12 @@ public class gameMGR {
             else
                 gui.space[7-gui.clicks[getSaver()]][getSaver()].setIcon(new ImageIcon("redpiece.png"));
             gui.clicks[getSaver()]++;
-            //gui.clicks[aiMove]++;/////////////////////////////////////////////////////////////////////
             showBoard(board.getBoard());
             clickChecker(getSaver());
             checkIfStale();
 
         }
     }
-
-    /* private void normal(int c){//////////////////////////////////////////////////////////////////////
-        boolean check = false;                                                             //////////////
-        for(int i = 1; i < board.boardHeight; i++){                                       ////////////////
-            //boolean check = false;//                                                  //////////////////
-            if( (i != 7) && (board.b[c][i]==0) && (check == false)) {                 ////////////////////
-                nrmlDfclty(c, i - 1);
-                System.out.print(" \nC: " + c + " i; " + i + "\n");
-                check = true;
-            }
-            if((i == 7) && (check == false))                                       /////////////////////////
-                nrmlDfclty(c, 7);                                                   ///////////////////////
-        }                                                                            ////////////////////
-        //nrmlDfclty(board.getChosenC(), board.getChosenR());                      /////////////////////
-    } *////////////////////////////////////////////////////////////////////////////////////////////////
 
     /*
     clickChecker: takes in int variable to check if the column that was chosen is not full.
@@ -615,12 +594,10 @@ public class gameMGR {
     private void clickChecker(int check){
         switch(check){
             case 0 :{
-                //gui.clicks[0]++;///////////////////////////////////////////////
-
-                    //gui.space[5-gui.clicks[0]][0].setIcon(new ImageIcon("redpiece.png"));////////////////////
+                
                 if(gui.clicks[0] == 8)
                     gui.column1.setVisible(false);
-                //gui.clicks[0]++;/////////////////////////////////////
+                
                 break;
             }
             case 1 :{
@@ -666,7 +643,7 @@ public class gameMGR {
         boolean move = false;
         int count = 0;
         int boardPos = 1; //
-        System.out.print( "This is player: " + board.b[c][r]);/////////////////////////
+        System.out.print( "This is player: " + board.b[c][r]);
         int i = c;
         //horizontal
         //while positions left and right of boardPos = playerNum and inbounds
@@ -682,7 +659,7 @@ public class gameMGR {
         i = c+1;
         if(i < 8) {
             Rv = i;
-            System.out.print("\nCheck RV : " + Rv + "\n");/////////////////////////////////////////////
+            System.out.print("\nCheck RV : " + Rv + "\n");
         }
         while((i < board.boardWidth) && (board.b[i][r] == boardPos)){
             count++;
@@ -695,13 +672,13 @@ public class gameMGR {
                     if (board.b[Lv-1][r] == 0) {
                         setSaver(Lv-1);
                         move = true;
-                        //System.out.print("\nJust chekcing in\n ");////////////////////////////////////////////////////
+                        //System.out.print("\nJust chekcing in\n ");
                     }
                 }
-                //System.out.print("getSaver : " + getSaver() + "move : " + move +"\n");//////////////////////////////////////////////////
+                //System.out.print("getSaver : " + getSaver() + "move : " + move +"\n");
 
                 if(((Rv) < 8) && (Rv >= 0) && (!move)){
-                    System.out.print("Rv+1: "  + ":\n");     //////////////////////////////////////
+                    System.out.print("Rv+1: "  + ":\n");
                     if(board.b[Rv][r] == 0) {
                         setSaver(Rv);
                         move = true;
@@ -791,13 +768,13 @@ public class gameMGR {
                 if (board.b[Lv-1][r] == 0) {
                     setSaver(Lv-1);
                     move = true;
-                    //System.out.print("\nJust chekcing in\n ");////////////////////////////////////////////////////
+                    //System.out.print("\nJust chekcing in\n ");
                 }
             }
-            //System.out.print("getSaver : " + getSaver() + "move : " + move +"\n");//////////////////////////////////////////////////
-            System.out.print("\n Bottom Rv is : " + Rv + "\n");/////////////////////////////////////////////////////////////////
+            //System.out.print("getSaver : " + getSaver() + "move : " + move +"\n");
+            System.out.print("\n Bottom Rv is : " + Rv + "\n");
             if((Rv < 8) && (Rv >= 0) && (!move)){
-                System.out.print("Rv+1: " + Rv + ":\n");     //////////////////////////////////////
+                System.out.print("Rv+1: " + Rv + ":\n");
                 if(board.b[Rv][r] == 0) {
                     setSaver(Rv);
                     move = true;
