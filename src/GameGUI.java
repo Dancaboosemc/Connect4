@@ -6,6 +6,9 @@ import javax.swing.ImageIcon;
 import javax.swing.JTextField;
 import java.awt.*;
 import java.awt.event.*;
+import javax.sound.sampled.Clip;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.AudioInputStream;
 
 public class GameGUI extends JFrame{
 
@@ -137,6 +140,23 @@ public class GameGUI extends JFrame{
         }
     }
 
+    public static synchronized void playS(final String fn){
+        new Thread(new Runnable(){
+            public void run(){
+                try{
+                    Clip clip = AudioSystem.getClip();
+                    AudioInputStream inputStream = AudioSystem.getAudioInputStream(
+          Main.class.getResourceAsStream(fn));
+        clip.open(inputStream);
+        clip.start();
+                
+            } catch(Exception e){
+                e.printStackTrace();
+            }
+        }
+        }).start();
+    }
+
     class VsEzAiActionListener implements ActionListener{
         public void actionPerformed(ActionEvent e) {
             startB.setVisible(false);
@@ -233,7 +253,7 @@ public class GameGUI extends JFrame{
             
             if (clicks[0] >= 8)
                 column1.setVisible(false);
-
+            playS("checker.wav");
         }
     }
 
@@ -242,7 +262,7 @@ public class GameGUI extends JFrame{
             
             if (clicks[1] >= 8)
                 column2.setVisible(false);
-
+            playS("checker.wav");
         }
     }
 
@@ -251,7 +271,7 @@ public class GameGUI extends JFrame{
             
             if (clicks[2] >= 8)
                 column3.setVisible(false);
-
+            playS("checker.wav");
         }
     }
 
@@ -260,7 +280,7 @@ public class GameGUI extends JFrame{
            
             if (clicks[3] >= 8)
                 column4.setVisible(false);
-
+            playS("checker.wav");
         }
     }
 
@@ -269,7 +289,7 @@ public class GameGUI extends JFrame{
            
             if (clicks[4] >= 8)
                 column5.setVisible(false);
-
+            playS("checker.wav");
         }
     }
 
@@ -278,7 +298,7 @@ public class GameGUI extends JFrame{
             
             if (clicks[5] >= 8)
                 column6.setVisible(false);
-
+            playS("checker.wav");
         }
     }
 
@@ -287,7 +307,7 @@ public class GameGUI extends JFrame{
             
             if (clicks[6] >= 8)
                 column7.setVisible(false);
-
+            playS("checker.wav");
         }
     }
 
@@ -296,7 +316,7 @@ public class GameGUI extends JFrame{
             
             if (clicks[7] >= 8)
                 column8.setVisible(false);
-
+            playS("checker.wav");
         }
     }
 
