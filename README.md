@@ -40,17 +40,6 @@ Local 2 player
 
 1 player vs AI
 
-## To-do list:
-Implement save/load feature
-
-GUI Board Graphics
-
-AI Implementation
-
-Sound Effects
-
-Avatars
-
 ## Status
 Austin - Leave of Absence
 
