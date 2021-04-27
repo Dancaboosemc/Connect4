@@ -714,9 +714,7 @@ public class gameMGR {
             }
 
         }
-        else{
-            //setSaver(1);///////////////////////////////
-        }
+        
         vertical = count;
 
 

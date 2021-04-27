@@ -342,6 +342,7 @@ public class GameGUI extends JFrame{
             save.setVisible(true);
             restart.setVisible(true);
             winner.setVisible(true);
+            winner.setText("Player " + playerTurn + "'s Turn");
         }
     }
     class SaveActionListener implements ActionListener{
