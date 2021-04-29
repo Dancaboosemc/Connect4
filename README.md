@@ -43,9 +43,15 @@ Local 2 player(Israel)
 ## Status
 Austin - Leave of Absence
 
-Daniel - Intial Project Design (notes: ./documents/Battle_plan.docx). GUI design, Implemented GUI (./src/GameGUI.java): class extends Jframe from javax.swing. Jframe has the default layout. Has one panel that holds the all the buttons and the textbox. 
-Core game buttons are implmented. Some buttons are place holders until other fetures are functional. Ex: save/load buttons. Issues getting images to appear. 
-Issue could be related to layout setting. Game board gui implemntation has been backlogged. Next steps are to redesign Jframe layout then address the board images.
+Daniel - (Sprint 3) Completed Refactoring of GUI Layout. The gui is now a JFrame with a Boarder layout 
+manager object that handels the organization of the gui layout. The layout is divided into TOP, BOTTOM, LEFT, RIGHT,
+and CENTER. The CENTER takes priority of the space allocated, and any leftover space is given to the other sections.
+The main game buttons are located in the TOP section. The TOP Section has a JPanel with a Grid Layout Manager
+to contain the buttons. This way if one button is deactivated, all others remain in the sameplace. The CENTER which
+contain the board and logo images and the BOTTOM which has the reset and save buttons, uses a JPanel with the 
+default Flow layout, which reallocates space if an element is removed, or added. Afterwards I did some bug fixing and code 
+clean up, deleting unused code or comments. The last few days were spent helping others with their tasks, but issues
+with my machine made it difficult to code and test in my enviroment. Last issues and bug fixes were completed as a team.
 
 
 Max - (Sprint 2)Board class design. refactored reference file into a new usable [board class](https://bitbucket.org/cs3398s21klingons/connect-4-app/src/Master/src/Board.java) That holds information related to the board and operations for adding to the board. Save/load function design(Sprint 2)/implementation(Sprint 3)[(lines 108-196 in gameMGR)](https://bitbucket.org/cs3398s21klingons/connect-4-app/src/Master/src/gameMGR.java). Allows the user to save the game state and load it back at a later time. (Sprint 3)Tile place sound effect[(lines 143-158 in GameGUI)](https://bitbucket.org/cs3398s21klingons/connect-4-app/src/Master/src/GameGUI.java) will play the check.wav sound file when the user places a piece on the board. Next steps are to do a code clean up, and add some more sound effects.
