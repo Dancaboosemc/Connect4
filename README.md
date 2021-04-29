@@ -56,6 +56,14 @@ Implemented methods and action listeners that saves the piece in the column that
 players know the state of the game (wether the player has won/tied). All located in (src/gameMGR.java). gameMGR.java also shows what is 
 saved in the 2D array (game board). Next step is designing an Ai for the user to play with. 
 
+Israel - Sprint 3 achievements: ai method implemented. The method checks if the user wants to play an easy or normal mode and activates
+the if statements that will allow for that mode to be played. Loaction(src/gameMGR/ line 547). The nrmlDfclty method checks the last column
+the user selected, and does the math needed to block the user depending on how many of the users pieces are connected (if 2 or 3 of the 
+users pieces are connected). The nrmlDfclty is like the isWin method in the Board file, but nrmlDfclty also updates the columnSaver 
+variable which is used in the ai method to select the column needed for the ai. src/gameMGR/line 649. The clickChecker method is 
+used to update the button clicks if the user is playing with the ai. src/gameMGR/602.
+
+
 
 ## Inspiration
 We are doing this because we wanted to work on something fun, and within our skill set
