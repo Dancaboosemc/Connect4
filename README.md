@@ -47,7 +47,9 @@ Daniel - Intial Project Design (notes: ./documents/Battle_plan.docx). GUI design
 Core game buttons are implmented. Some buttons are place holders until other fetures are functional. Ex: save/load buttons. Issues getting images to appear. 
 Issue could be related to layout setting. Game board gui implemntation has been backlogged. Next steps are to redesign Jframe layout then address the board images.
 
+<<<<<<< HEAD
 Max - (Sprint 2)Board class design. refactored reference file into a new usable [board class](https://bitbucket.org/cs3398s21klingons/connect-4-app/src/Master/src/Board.java) That holds information related to the board and operations for adding to the board. Save/load function design(Sprint 2)/implementation(Sprint 3)[(line 108-196 in gameMGR)](https://bitbucket.org/cs3398s21klingons/connect-4-app/src/Master/src/gameMGR.java). Allows the user to save the game state and load it back at a later time. (Sprint 3)Tile place sound effect[(lines 143-158 in GameGUI)](https://bitbucket.org/cs3398s21klingons/connect-4-app/src/Master/src/GameGUI.java) will play the check.wav sound file when the user places a piece on the board. Next steps are to do a code clean up, and add some more sound effects.
+
 
 
 Isreal - class integration. Sprint 2 achievements. Methods for start and restart button implemented (which start or restart the game).
